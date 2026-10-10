@@ -1,0 +1,53 @@
+#!/usr/bin/env python3
+"""Regenerate index.json from lanes/*.lanepack.tar.gz — never edit by hand.
+
+Each pack's manifest.json is authoritative; the index is a flattened projection
+for consumers that browse/resolve/install lanes.
+
+  python3 build_index.py
+"""
+import hashlib, json, os, tarfile, time
+
+REPO = os.path.dirname(os.path.abspath(__file__))
+LANES = os.path.join(REPO, "lanes")
+BASE_URL = "https://github.com/javimosch/mtlm-heads/raw/master/lanes"
+
+entries = []
+for fn in sorted(os.listdir(LANES)):
+    if not fn.endswith(".lanepack.tar.gz"):
+        continue
+    path = os.path.join(LANES, fn)
+    with tarfile.open(path) as t:
+        man = json.loads(t.extractfile("manifest.json").read())
+        ev = json.loads(t.extractfile("eval.json").read())
+    sha = hashlib.sha256(open(path, "rb").read()).hexdigest()
+    name_ver = fn[: -len(".lanepack.tar.gz")]
+    entries.append({
+        "name": man["name"],
+        "version": man["version"],
+        "file": fn,
+        "url": f"{BASE_URL}/{fn}",
+        "sha256": sha,
+        "head_sha256": man["head_sha256"],
+        "classes": len(man["taxonomy"]),
+        "taxonomy": man["taxonomy"],
+        "status": man.get("status") or ev.get("status") or ("certified" if ev.get("holdout_acc") else "demo"),
+        "holdout_acc": ev.get("holdout_acc"),
+        "n_holdout": ev.get("n_holdout"),
+        "conformal": ev.get("conformal"),
+        "license": man["license"],
+        "provenance": man["provenance"],
+        "runtime": man["runtime"],
+        "published_at": man["created"],
+    })
+
+index = {
+    "index_schema_version": "mtlm-index/1",
+    "generated_at": int(time.time()),
+    "artifacts_base": BASE_URL,
+    "lanes": entries,
+}
+with open(os.path.join(REPO, "index.json"), "w") as f:
+    json.dump(index, f, indent=2)
+    f.write("\n")
+print(json.dumps({"lanes": len(entries), "names": [e["name"] + "@" + e["version"] for e in entries]}))
