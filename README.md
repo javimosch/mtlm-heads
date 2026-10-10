@@ -12,7 +12,8 @@ before you trust the lane.
 
 | lane | version | classes | holdout | status |
 |---|---|---|---|---|
-| **clinc150** | 0.1.0 | 151 generic intents | 73.8% · OOS AUROC 0.842 | free (`lanes/clinc150-0.1.0.lanepack.tar.gz`) |
+| **clinc150** | 0.1.0 | 151 generic intents | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.0.lanepack.tar.gz`) |
+| **helpdesk** | 0.1.0 | 5 IT routes + escalate | demo pack — no certified holdout | free (`lanes/helpdesk-0.1.0.lanepack.tar.gz`) |
 
 ## Custom lanes
 
