@@ -1,0 +1,43 @@
+# Lane pack format — `lanepack/1`
+
+A **certified lane pack** (`*.lanepack.tar.gz`) is the sellable unit of
+mtlm-router: a calibrated decision lane for one domain, with its measured
+evaluation and operating point included — not just a weight file.
+
+## Contents
+
+| file | what |
+|---|---|
+| `<lane>.head` | trained head weights (LR over pooled trunk taps, mhd format) |
+| `manifest.json` | name, version, taxonomy, `metrics`, `provenance`, `license`, `head_sha256`, `runtime` requirement |
+| `eval.json` | the eval report: holdout accuracy, n, OOS AUROC, conformal operating points, taps |
+| `labels.txt` | one `route :: description` per class |
+| `LICENSE.txt` | artifact license |
+
+## What "certified" means
+
+The manifest carries a **leak-free holdout eval** (head emitted from train
+rows only, scored through the served runtime) and, when calibrated, a
+**conformal operating point** (`qhat` + expected selective risk). A pack
+without these is a demo pack, not a certified pack.
+
+## Install a lane
+
+```sh
+tar xzf clinc150-0.1.0.lanepack.tar.gz
+# add to your appliance env:
+export ANVIL_EXPERTS="clinc:./clinc150_mt3.head,$ANVIL_EXPERTS"
+# if eval.json carries a qhat, gate it:
+export ANVIL_EXPERT_QHAT="clinc:<qhat from eval.json>,$ANVIL_EXPERT_QHAT"
+```
+
+## Versioning
+
+`<name>-<semver>.lanepack.tar.gz`. Minor bump = retrain/recalibration that
+keeps the taxonomy; major bump = taxonomy change (not drop-in safe).
+
+## Selling vs free
+
+Packs marked `license: Apache-2.0` are free. Packs under a commercial
+license ship the same format — certification is what you're paying for:
+the eval, the operating point, and the support loop.
