@@ -1,0 +1,3 @@
+d3efaf55503d83ec5a063a3a52a849b3b967162375d8914264b672b66b41797a  clinc150-0.1.1.lanepack.tar.gz
+39f73f1dcaf0c0367f123ad8e1b7622aef366ad6a0f51f571353c7f72a438af6  eq_tone-0.1.0.lanepack.tar.gz
+44f27e35b5fe1c53b37ee3ebf6fc8bac86d3a393303fc99d9b7be539c75e33f0  helpdesk-0.1.0.lanepack.tar.gz

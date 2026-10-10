@@ -12,7 +12,7 @@ before you trust the lane.
 
 | lane | version | classes | holdout | status |
 |---|---|---|---|---|
-| **clinc150** | 0.1.0 | 151 generic intents | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.0.lanepack.tar.gz`) |
+| **clinc150** | 0.1.1 | 151 generic intents | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.1.lanepack.tar.gz`) |
 | **helpdesk** | 0.1.0 | 5 IT routes + escalate | demo pack — no certified holdout | free (`lanes/helpdesk-0.1.0.lanepack.tar.gz`) |
 | **eq_tone** | 0.1.0 | 5 tone classes (frustrated/distressed escalation) | 51.4% on 4,995-row GoEmotions holdout — real but weak; conformal automates only ~5-16% at usable error | free, demo (`lanes/eq_tone-0.1.0.lanepack.tar.gz`) |
 
@@ -20,6 +20,22 @@ before you trust the lane.
 lane (cf. clinc150's stronger 73.8%), and its honest conformal numbers show *why*
 calibrated abstention and domain-fitted heads matter. Certified lanes keep a
 higher bar.
+
+`clinc150` 0.1.1 replaces 0.1.0 — same weights (sha256 `2110652d…338ec`), the
+0.1.0 `labels.txt` dropped 3 of 151 classes. Found by `lane_verify.py`.
+
+## Verify a pack
+
+`lanes/SHA256SUMS.txt` pins every tarball. With mtlm-router checked out:
+
+```sh
+curl -LO https://github.com/javimosch/mtlm-heads/raw/master/lanes/eq_tone-0.1.0.lanepack.tar.gz
+python3 tools/lane_verify.py eq_tone-0.1.0.lanepack.tar.gz --sums lanes/SHA256SUMS.txt
+```
+
+`lane_verify.py` checks the tarball checksum, head↔manifest sha256, manifest
+schema, labels↔taxonomy agreement, the head's embedded class count, and the
+certified-claim gate. Exit 0 = verified.
 
 ## Custom lanes
 
