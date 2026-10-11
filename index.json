@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791694595,
+  "generated_at": 1791695452,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -65,11 +65,11 @@
     },
     {
       "name": "civic",
-      "version": "0.2.0",
-      "file": "civic-0.2.0.lanepack.tar.gz",
-      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic-0.2.0.lanepack.tar.gz",
-      "sha256": "a4d4f1b867b1b46257e470af0a1f8529e537c354be185d77eef769f4f50d92de",
-      "head_sha256": "95b5e751689f31f35f1c7bb06921f394e38783fa85e1fbc466b9735a45bf0576",
+      "version": "0.2.1",
+      "file": "civic-0.2.1.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic-0.2.1.lanepack.tar.gz",
+      "sha256": "776a88871d0b8eac88fbe0d8c08b9afeb70c66842aa90f24a3d010d7858da484",
+      "head_sha256": "bb3ce7922c34aeb021bc248fce361175e0c3c84727fb8422b7cac42d75100b02",
       "classes": 14,
       "taxonomy": [
         "animals",
@@ -95,9 +95,9 @@
       "pricing": {
         "tier": "free"
       },
-      "provenance": "civic 0.1.0 + explicit oos class: 48 council-adjacent negatives + 200 CLINC train texts; validated on bench/oos_eval_civic set",
+      "provenance": "civic 0.1.0 + explicit oos class: 48 council-adjacent negatives + 200 CLINC train texts; live-verified; supersedes yanked 0.2.0 (label-misaligned fit)",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
-      "published_at": 1791694595
+      "published_at": 1791695452
     },
     {
       "name": "civic_fr",

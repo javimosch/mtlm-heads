@@ -12,7 +12,7 @@ before you trust the lane.
 
 | lane | version | classes | holdout | status |
 |---|---|---|---|---|
-| **civic** | 0.2.0 | 13 routes + explicit `oos` class — OOS recall 96.8% (ID-OOS 92.5%) | in-scope 86.6% train-only; demo pending re-eval | free, demo (`lanes/civic-0.2.0.lanepack.tar.gz`) |
+| **civic** | 0.2.1 | 13 routes + explicit `oos` class — OOS recall 96.8%, live-verified | free, demo (`lanes/civic-0.2.1.lanepack.tar.gz`) |
 | civic (old) | 0.1.0 | 13 civic defect routes (FixMyStreet) | **96.8%** on 941-row holdout · conformal α=.05 → 93.7% auto @ 0.79% err | free, certified (`lanes/civic-0.1.0.lanepack.tar.gz`) |
 | **clinc150** | 0.1.2 | 151 generic intents | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.2.lanepack.tar.gz`) |
 | **civic_fr** | 0.1.0 | 11 French civic routes (DansMaRue taxonomy) | 100% on *synthetic* holdout — template corpus, demo only | free, demo (`lanes/civic_fr-0.1.0.lanepack.tar.gz`) |
