@@ -9,7 +9,7 @@ evaluation and operating point included — not just a weight file.
 | file | what |
 |---|---|
 | `<lane>.head` | trained head weights (LR over pooled trunk taps, mhd format) |
-| `manifest.json` | name, version, taxonomy, `metrics`, `status` (`certified`\|`demo`), `provenance`, `license`, `head_sha256`, `runtime` requirement |
+| `manifest.json` | name, version, taxonomy, `metrics`, `status` (`certified`\|`demo`), `provenance`, `license`, `pricing` (`{tier: free\|commercial, ...}`), `head_sha256`, `runtime` requirement |
 | `eval.json` | the eval report: holdout accuracy, n, OOS AUROC, conformal operating points, taps |
 | `labels.txt` | one `route :: description` per class |
 | `LICENSE.txt` | artifact license |
@@ -50,6 +50,8 @@ keeps the taxonomy; major bump = taxonomy change (not drop-in safe).
 
 ## Selling vs free
 
-Packs marked `license: Apache-2.0` are free. Packs under a commercial
-license ship the same format — certification is what you're paying for:
-the eval, the operating point, and the support loop.
+Packs marked `license: Apache-2.0` and `pricing.tier: free` are free.
+Commercial packs ship the same format with a commercial `LICENSE.txt` and
+`pricing` in the manifest — projected into `index.json` so terms are
+visible before download. Certification is what you're paying for:
+the eval, the operating point, and the support loop. See PRICING.md.

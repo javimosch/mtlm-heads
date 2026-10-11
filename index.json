@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791651870,
+  "generated_at": 1791688993,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -178,6 +178,9 @@
         }
       },
       "license": "Apache-2.0 (model weights + pack); upstream CLINC150 dataset is Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
       "provenance": "Trained on the public CLINC150 benchmark (train split only), holdout eval on untouched test split. v0.1.1: labels.txt repaired; v0.1.2: manifest status field added.",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859
@@ -223,6 +226,9 @@
         }
       },
       "license": "Apache-2.0 (weights); GoEmotions dataset Apache-2.0; Reddit source text remains with its authors",
+      "pricing": {
+        "tier": "free"
+      },
       "provenance": "GoEmotions (google-research, Reddit comments, Apache-2.0), 28 labels merged to 5 tone superclasses; trained on frozen m7router3s384 trunk via LR head. v0.1.1: manifest status field added.",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859
@@ -247,6 +253,9 @@
       "n_holdout": null,
       "conformal": null,
       "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
       "provenance": "Synthetic IT-helpdesk demo corpus (public, generated). v0.1.1: manifest status field added.",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859

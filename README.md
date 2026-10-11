@@ -44,12 +44,22 @@ name, version, url, sha256s, taxonomy, status, holdout metrics, conformal
 points per pack. One command resolves, downloads, verifies and installs:
 
 ```sh
-python3 tools/lane_install.py eq_tone --appliance ./mtlm-router-v0.4.0-linux-amd64
-# writes models/eq_tone_mt.head and prints the ANVIL_EXPERTS/QHAT env lines
+python3 tools/lane_install.py eq_tone --appliance ./mtlm-router-v0.5.0-linux-amd64 --apply
+# verifies shas, writes models/, patches start.sh env — restart and it's live
+python3 tools/lane_install.py --appliance . --list      # what's installed
+python3 tools/lane_install.py --appliance . --uninstall eq_tone
 ```
+
+## Pricing & licensing
+
+[PRICING.md](PRICING.md) — free demo/certified lanes are Apache-2.0; commercial
+and custom lanes ship the same pack format under a commercial license with a
+recalibration window. Every pack's `manifest.json` (and `index.json`) carries
+`pricing.tier` + `license` — terms visible before download.
 
 ## Custom lanes
 
 A lane fitted on *your* taxonomy + *your* export (~50 labeled examples per
 route for a working lane, full export + calibration for a certified point)
-is the pilot offer — contact via the repo owner.
+is the pilot offer — contact via the repo owner. Client-fitted heads and
+client-derived corpora stay private, always.

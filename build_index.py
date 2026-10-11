@@ -36,6 +36,7 @@ for fn in sorted(os.listdir(LANES)):
         "n_holdout": ev.get("n_holdout"),
         "conformal": ev.get("conformal"),
         "license": man["license"],
+        "pricing": man.get("pricing", {"tier": "free"}),
         "provenance": man["provenance"],
         "runtime": man["runtime"],
         "published_at": man["created"],
