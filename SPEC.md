@@ -56,6 +56,34 @@ python3 tools/lane_install.py eq_tone --appliance <appliance-dir>
 # resolves latest version, downloads, verifies shas, writes models/, prints env
 ```
 
+## Registry sidecars — `floors.json`, `deprecated.json`
+
+Two checked-in policy files sit next to the packs; `build_index.py`
+merges them into index entries. Packs stay immutable — operator policy
+and lifecycle state live here, not inside tarballs.
+
+**`floors.json`** — recommended confidence floors, keyed by lane *name*
+(spans versions):
+
+```json
+{"clinc150": {"min_conf": 0.7, "note": "7.8% leak / 69% coverage at 0.7"}}
+```
+
+→ index field `operating`. `min_conf: null` means no useful floor
+(argmax abstain or conformal carries the lane). Re-measure after any
+head/corpus change (`bench/oos_eval.py`).
+
+**`deprecated.json`** — additive yank records, keyed `name@version`:
+
+```json
+{"helpdesk@0.1.1": {"superseded_by": "helpdesk@0.2.0", "reason": "..."}}
+```
+
+→ index fields `yanked`, `superseded_by`, `yank_reason`. A yanked pack
+stays installable by exact pin (immutability) but is excluded from
+latest-resolution, shows a badge on the catalog, and `lane_install`
+warns with the migration path on both `--apply` and `--check`.
+
 ## Install a lane
 
 ```sh
