@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791695826,
+  "generated_at": 1791697925,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -137,6 +137,40 @@
       "provenance": "DansMaRue taxonomy (opendata.paris.fr) + tools/build_civic_fr.py template generation; no real free text exists publicly",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791691307
+    },
+    {
+      "name": "civic_fr",
+      "version": "0.1.1",
+      "file": "civic_fr-0.1.1.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic_fr-0.1.1.lanepack.tar.gz",
+      "sha256": "c0fbf627a8f86f489a23982bd81167335d7b4416529e1de44b53f2c88d2df66a",
+      "head_sha256": "33c8a5dcedc57d1c121a3473496954feab05884df9811c1e9c5be6e45fc97100",
+      "classes": 12,
+      "taxonomy": [
+        "activites_commerciales",
+        "oos",
+        "arbres_vegetation",
+        "autre",
+        "eau",
+        "eclairage",
+        "graffiti_affiches",
+        "mobilier_urbain",
+        "objets_encombrants",
+        "proprete_dechets",
+        "stationnement_epaves",
+        "voirie_trottoir"
+      ],
+      "status": "demo",
+      "holdout_acc": null,
+      "n_holdout": 330,
+      "conformal": null,
+      "license": "Taxonomy ODbL Mairie de Paris; synthetic utterances Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "civic_fr 0.1.0 + explicit oos class (FR hard+easy negatives); live-verified",
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791697925
     },
     {
       "name": "clinc150",
