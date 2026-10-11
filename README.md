@@ -14,6 +14,7 @@ before you trust the lane.
 |---|---|---|---|---|
 | **civic** | 0.1.0 | 13 civic defect routes (FixMyStreet) | **96.8%** on 941-row holdout · conformal α=.05 → 93.7% auto @ 0.79% err | free, certified (`lanes/civic-0.1.0.lanepack.tar.gz`) |
 | **clinc150** | 0.1.2 | 151 generic intents | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.2.lanepack.tar.gz`) |
+| **civic_fr** | 0.1.0 | 11 French civic routes (DansMaRue taxonomy) | 100% on *synthetic* holdout — template corpus, demo only | free, demo (`lanes/civic_fr-0.1.0.lanepack.tar.gz`) |
 | **helpdesk** | 0.1.1 | 5 IT routes + escalate | demo pack — no certified holdout | free (`lanes/helpdesk-0.1.1.lanepack.tar.gz`) |
 | **eq_tone** | 0.1.1 | 5 tone classes (frustrated/distressed escalation) | 51.4% on 4,995-row GoEmotions holdout — real but weak; conformal automates only ~5-16% at usable error | free, demo (`lanes/eq_tone-0.1.1.lanepack.tar.gz`) |
 

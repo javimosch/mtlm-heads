@@ -1,4 +1,5 @@
 1907a4c8731cb5e2b6bb825a7781999f1295fb43b79b60bc445c796fa2ec95a5  lanes/civic-0.1.0.lanepack.tar.gz
+1c14200b233ffc3d8700ee3a03d377b90c256c395db86cbcee3904146b6b0e13  lanes/civic_fr-0.1.0.lanepack.tar.gz
 7257a15d2a2282cee754af35d1ba203cfa5d72bbf988979033f68f5b73969dc3  lanes/clinc150-0.1.2.lanepack.tar.gz
 df3401cae3d9a27172b39b4b06316b517224e7fa67207cd5e1f096cb82f183e5  lanes/eq_tone-0.1.1.lanepack.tar.gz
 a1846154c250211b9ff26bd3c22f1cb52b66bbff21f5f546de713cbce7059647  lanes/helpdesk-0.1.1.lanepack.tar.gz

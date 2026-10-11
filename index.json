@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791690384,
+  "generated_at": 1791691307,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -62,6 +62,45 @@
       "provenance": "FixMyStreet Open311 API (public citizen reports, fetched 2026-10-11); 320 council labels -> 13 canonical routes; train 3751/holdout 941; tools/emit_civic.py",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791690380
+    },
+    {
+      "name": "civic_fr",
+      "version": "0.1.0",
+      "file": "civic_fr-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic_fr-0.1.0.lanepack.tar.gz",
+      "sha256": "1c14200b233ffc3d8700ee3a03d377b90c256c395db86cbcee3904146b6b0e13",
+      "head_sha256": "7789fe17b855a823cecffba0e3da2d6fbbdc3dbbbbd751bc5d6a9d54f3ff7eb2",
+      "classes": 11,
+      "taxonomy": [
+        "activites_commerciales",
+        "arbres_vegetation",
+        "autre",
+        "eau",
+        "eclairage",
+        "graffiti_affiches",
+        "mobilier_urbain",
+        "objets_encombrants",
+        "proprete_dechets",
+        "stationnement_epaves",
+        "voirie_trottoir"
+      ],
+      "status": "demo",
+      "holdout_acc": 1.0,
+      "n_holdout": 330,
+      "conformal": {
+        "alpha_0.05": {
+          "qhat": 0.0008,
+          "auto": 0.979,
+          "err": 0.0
+        }
+      },
+      "license": "Taxonomy ODbL Mairie de Paris; synthetic utterances Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "DansMaRue taxonomy (opendata.paris.fr) + tools/build_civic_fr.py template generation; no real free text exists publicly",
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791691307
     },
     {
       "name": "clinc150",
