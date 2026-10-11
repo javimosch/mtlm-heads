@@ -3,5 +3,21 @@
   "helpdesk@0.1.1": {
     "superseded_by": "helpdesk@0.2.0",
     "reason": "demo pack superseded — 0.2.0 adds the oos class, live-verified eval, and measured abstention metrics; migrate with: python3 tools/lane_install.py helpdesk@0.2.0 --apply"
+  },
+  "civic@0.1.0": {
+    "superseded_by": "civic@0.2.1",
+    "reason": "superseded by 0.2.1 (oos class + conformal eval); migrate with: python3 tools/lane_install.py civic@0.2.1 --apply"
+  },
+  "civic_fr@0.1.0": {
+    "superseded_by": "civic_fr@0.1.1",
+    "reason": "superseded by 0.1.1; migrate with: python3 tools/lane_install.py civic_fr@0.1.1 --apply"
+  },
+  "clinc150@0.1.2": {
+    "superseded_by": "clinc150@0.1.4",
+    "reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5→20.4%, hard-negative recall 0→59.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply"
+  },
+  "clinc150@0.1.3": {
+    "superseded_by": "clinc150@0.1.4",
+    "reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5→20.4%, hard-negative recall 0→59.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply"
   }
 }

@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791749086,
+  "generated_at": 1791753691,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -35,9 +35,9 @@
         "min_conf": 0.5,
         "note": "4% leak / 96% coverage at 0.5"
       },
-      "yanked": null,
-      "superseded_by": null,
-      "yank_reason": null,
+      "yanked": true,
+      "superseded_by": "civic@0.2.1",
+      "yank_reason": "superseded by 0.2.1 (oos class + conformal eval); migrate with: python3 tools/lane_install.py civic@0.2.1 --apply",
       "conformal": {
         "alpha_0.15": {
           "qhat": 0.0392,
@@ -152,9 +152,9 @@
         "min_conf": null,
         "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
       },
-      "yanked": null,
-      "superseded_by": null,
-      "yank_reason": null,
+      "yanked": true,
+      "superseded_by": "civic_fr@0.1.1",
+      "yank_reason": "superseded by 0.1.1; migrate with: python3 tools/lane_install.py civic_fr@0.1.1 --apply",
       "conformal": {
         "alpha_0.05": {
           "qhat": 0.0008,
@@ -388,9 +388,9 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
       },
-      "yanked": null,
-      "superseded_by": null,
-      "yank_reason": null,
+      "yanked": true,
+      "superseded_by": "clinc150@0.1.4",
+      "yank_reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5\u219220.4%, hard-negative recall 0\u219259.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply",
       "conformal": {
         "alpha_015": {
           "auto": 0.399,
@@ -594,9 +594,9 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
       },
-      "yanked": null,
-      "superseded_by": null,
-      "yank_reason": null,
+      "yanked": true,
+      "superseded_by": "clinc150@0.1.4",
+      "yank_reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5\u219220.4%, hard-negative recall 0\u219259.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply",
       "conformal": {
         "alpha_015": {
           "auto": 0.399,
