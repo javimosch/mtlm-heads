@@ -24,7 +24,8 @@ for fn in sorted(os.listdir(LANES)):
     name_ver = fn[: -len(".lanepack.tar.gz")]
     # eval.json key names vary across emitters — normalize to index fields
     acc = ev.get("holdout_acc") or ev.get("in_scope_holdout_acc_trainonly") or ev.get("in_scope_acc_trainonly")
-    oos = {k: ev[k] for k in ("oos_recall", "id_oos_recall", "far_oos_recall", "in_scope_false_oos") if k in ev}
+    oos = {k: ev[k] for k in ("oos_recall", "id_oos_recall", "far_oos_recall", "in_scope_false_oos",
+                              "oos_leak_curve", "coverage_curve", "oos_eval_note") if k in ev}
     entries.append({
         "name": man["name"],
         "version": man["version"],

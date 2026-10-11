@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791739498,
+  "generated_at": 1791740246,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -539,7 +539,20 @@
       "holdout_acc": 0.738,
       "n_holdout": 5500,
       "oos": {
-        "oos_recall": 0.15
+        "oos_recall": 0.15,
+        "oos_leak_curve": {
+          "0.3": 0.275,
+          "0.5": 0.125,
+          "0.7": 0.075,
+          "0.9": 0.025
+        },
+        "coverage_curve": {
+          "0.3": 0.92,
+          "0.5": 0.86,
+          "0.7": 0.7,
+          "0.9": 0.38
+        },
+        "oos_eval_note": "argmax abstain share 15% on held-out CLINC oos rows (n=40); leaks carry low conf (median 0.23 vs in-scope 0.86) \u2014 conf>=0.5 gate cuts leak to 12.5%, conf>=0.7 to 7.5%. bench/oos_eval_catalog.json"
       },
       "live_verified": true,
       "conformal": {
