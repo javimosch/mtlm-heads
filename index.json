@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791691307,
+  "generated_at": 1791694595,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -62,6 +62,42 @@
       "provenance": "FixMyStreet Open311 API (public citizen reports, fetched 2026-10-11); 320 council labels -> 13 canonical routes; train 3751/holdout 941; tools/emit_civic.py",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791690380
+    },
+    {
+      "name": "civic",
+      "version": "0.2.0",
+      "file": "civic-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic-0.2.0.lanepack.tar.gz",
+      "sha256": "a4d4f1b867b1b46257e470af0a1f8529e537c354be185d77eef769f4f50d92de",
+      "head_sha256": "95b5e751689f31f35f1c7bb06921f394e38783fa85e1fbc466b9735a45bf0576",
+      "classes": 14,
+      "taxonomy": [
+        "animals",
+        "drains_flooding",
+        "fly_tipping",
+        "graffiti_flyposting",
+        "oos",
+        "other",
+        "parking_vehicles",
+        "parks_green",
+        "pavement_footpath",
+        "pothole",
+        "signs_signals_markings",
+        "street_cleaning_waste",
+        "street_lighting",
+        "trees_vegetation"
+      ],
+      "status": "demo",
+      "holdout_acc": null,
+      "n_holdout": 941,
+      "conformal": null,
+      "license": "FixMyStreet Open311 corpus (public reports); OOS negatives: hand-written + CLINC150 (CC)",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "civic 0.1.0 + explicit oos class: 48 council-adjacent negatives + 200 CLINC train texts; validated on bench/oos_eval_civic set",
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791694595
     },
     {
       "name": "civic_fr",
