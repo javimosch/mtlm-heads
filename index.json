@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791697925,
+  "generated_at": 1791701197,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -428,6 +428,35 @@
       "provenance": "Synthetic IT-helpdesk demo corpus (public, generated). v0.1.1: manifest status field added.",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859
+    },
+    {
+      "name": "helpdesk",
+      "version": "0.2.0",
+      "file": "helpdesk-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/helpdesk-0.2.0.lanepack.tar.gz",
+      "sha256": "dc573f8b22114b973d65dd084fbe732a8dfc82223ccb7e3d7d8cf7c2187c0599",
+      "head_sha256": "faa30df566b09a46a23fd6a24391b540ec09f69fa7fd79e4369a7765b4779821",
+      "classes": 7,
+      "taxonomy": [
+        "chat",
+        "escalate",
+        "file_ticket",
+        "oos",
+        "provision_vm",
+        "reset_password",
+        "ticket_status"
+      ],
+      "status": "demo",
+      "holdout_acc": 1.0,
+      "n_holdout": null,
+      "conformal": null,
+      "license": "/tmp/hd_old/LICENSE.txt",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "Synthetic IT-helpdesk corpus (2000 rows, public) + 80 hand-written OOS negatives (facilities/HR-adjacent + generic). 7 routes incl explicit oos. Live-verified + parity-checked on anvil-serve-mixed.",
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791701170
     }
   ]
 }

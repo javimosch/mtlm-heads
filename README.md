@@ -17,6 +17,7 @@ before you trust the lane.
 | **clinc150** | 0.1.2 | 151 generic intents | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.2.lanepack.tar.gz`) |
 | **civic_fr** | 0.1.1 | 11 FR routes + `oos` — OOS recall 90.9%, live-verified | template corpus; natural phrasings abstain (honest) | free, demo (`lanes/civic_fr-0.1.1.lanepack.tar.gz`) |
 | **helpdesk** | 0.1.1 | 5 IT routes + escalate | demo pack — no certified holdout | free (`lanes/helpdesk-0.1.1.lanepack.tar.gz`) |
+| **helpdesk** | 0.2.0 | 6 IT routes + `oos` | demo — OOS recall 0.90 on hand-written negatives, live-verified + parity-checked | free (`lanes/helpdesk-0.2.0.lanepack.tar.gz`) |
 | **eq_tone** | 0.1.1 | 5 tone classes (frustrated/distressed escalation) | 51.4% on 4,995-row GoEmotions holdout — real but weak; conformal automates only ~5-16% at usable error | free, demo (`lanes/eq_tone-0.1.1.lanepack.tar.gz`) |
 
 `eq_tone` is published deliberately: a generic-vocab public dataset gives a weak
