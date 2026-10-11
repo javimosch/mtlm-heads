@@ -12,6 +12,9 @@ REPO = os.path.dirname(os.path.abspath(__file__))
 LANES = os.path.join(REPO, "lanes")
 BASE_URL = "https://github.com/javimosch/mtlm-heads/raw/master/lanes"
 
+floors_path = os.path.join(REPO, "floors.json")
+floors = json.load(open(floors_path)) if os.path.exists(floors_path) else {}
+
 entries = []
 for fn in sorted(os.listdir(LANES)):
     if not fn.endswith(".lanepack.tar.gz"):
@@ -40,6 +43,7 @@ for fn in sorted(os.listdir(LANES)):
         "n_holdout": ev.get("n_holdout"),
         "oos": oos or None,
         "live_verified": bool(man.get("live_verified") or ev.get("live_verified")),
+        "operating": floors.get(man["name"]),
         "conformal": ev.get("conformal"),
         "license": man["license"],
         "pricing": man.get("pricing", {"tier": "free"}),
