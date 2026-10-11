@@ -1,0 +1,7 @@
+{
+  "_note": "additive deprecation records — packs are immutable; a superseded lane stays installable by exact pin but is flagged yanked in the index so range picks skip it",
+  "helpdesk@0.1.1": {
+    "superseded_by": "helpdesk@0.2.0",
+    "reason": "demo pack superseded — 0.2.0 adds the oos class, live-verified eval, and measured abstention metrics; migrate with: python3 tools/lane_install.py helpdesk@0.2.0 --apply"
+  }
+}

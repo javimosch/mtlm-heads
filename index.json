@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791746544,
+  "generated_at": 1791748037,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -35,6 +35,9 @@
         "min_conf": 0.5,
         "note": "4% leak / 96% coverage at 0.5"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": {
         "alpha_0.15": {
           "qhat": 0.0392,
@@ -107,6 +110,9 @@
         "min_conf": 0.5,
         "note": "4% leak / 96% coverage at 0.5"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": null,
       "license": "FixMyStreet Open311 corpus (public reports); OOS negatives: hand-written + CLINC150 (CC)",
       "pricing": {
@@ -146,6 +152,9 @@
         "min_conf": null,
         "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": {
         "alpha_0.05": {
           "qhat": 0.0008,
@@ -197,6 +206,9 @@
         "min_conf": null,
         "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": null,
       "license": "Taxonomy ODbL Mairie de Paris; synthetic utterances Apache-2.0",
       "pricing": {
@@ -376,6 +388,9 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": {
         "alpha_015": {
           "auto": 0.399,
@@ -579,6 +594,9 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": {
         "alpha_015": {
           "auto": 0.399,
@@ -780,6 +798,9 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": {
         "alpha_015": {
           "auto": 0.399,
@@ -822,6 +843,9 @@
         "min_conf": null,
         "note": "use conformal qhat, not a confidence floor - neutral is the negative class"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": {
         "alpha_0.15": {
           "qhat": 0.8667,
@@ -876,6 +900,9 @@
         "min_conf": null,
         "note": "argmax abstains 100% of held-out OOS; no floor needed"
       },
+      "yanked": true,
+      "superseded_by": "helpdesk@0.2.0",
+      "yank_reason": "demo pack superseded \u2014 0.2.0 adds the oos class, live-verified eval, and measured abstention metrics; migrate with: python3 tools/lane_install.py helpdesk@0.2.0 --apply",
       "conformal": null,
       "license": "Apache-2.0",
       "pricing": {
@@ -916,6 +943,9 @@
         "min_conf": null,
         "note": "argmax abstains 100% of held-out OOS; no floor needed"
       },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
       "conformal": null,
       "license": "/tmp/hd_old/LICENSE.txt",
       "pricing": {

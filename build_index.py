@@ -14,6 +14,10 @@ BASE_URL = "https://github.com/javimosch/mtlm-heads/raw/master/lanes"
 
 floors_path = os.path.join(REPO, "floors.json")
 floors = json.load(open(floors_path)) if os.path.exists(floors_path) else {}
+dep_path = os.path.join(REPO, "deprecated.json")
+deprecated = {k: v for k, v in
+              (json.load(open(dep_path)) if os.path.exists(dep_path) else {}).items()
+              if not k.startswith("_")}
 
 entries = []
 for fn in sorted(os.listdir(LANES)):
@@ -44,6 +48,9 @@ for fn in sorted(os.listdir(LANES)):
         "oos": oos or None,
         "live_verified": bool(man.get("live_verified") or ev.get("live_verified")),
         "operating": floors.get(man["name"]),
+        "yanked": f"{man['name']}@{man['version']}" in deprecated or None,
+        "superseded_by": deprecated.get(f"{man['name']}@{man['version']}", {}).get("superseded_by"),
+        "yank_reason": deprecated.get(f"{man['name']}@{man['version']}", {}).get("reason"),
         "conformal": ev.get("conformal"),
         "license": man["license"],
         "pricing": man.get("pricing", {"tier": "free"}),
