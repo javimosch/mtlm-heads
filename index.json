@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791701197,
+  "generated_at": 1791725262,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -29,6 +29,8 @@
       "status": "certified",
       "holdout_acc": 0.9681,
       "n_holdout": 941,
+      "oos": null,
+      "live_verified": false,
       "conformal": {
         "alpha_0.15": {
           "qhat": 0.0392,
@@ -88,8 +90,15 @@
         "trees_vegetation"
       ],
       "status": "demo",
-      "holdout_acc": null,
+      "holdout_acc": 0.866,
       "n_holdout": 941,
+      "oos": {
+        "oos_recall": 0.968,
+        "id_oos_recall": 0.925,
+        "far_oos_recall": 0.98,
+        "in_scope_false_oos": 0.0021
+      },
+      "live_verified": true,
       "conformal": null,
       "license": "FixMyStreet Open311 corpus (public reports); OOS negatives: hand-written + CLINC150 (CC)",
       "pricing": {
@@ -123,6 +132,8 @@
       "status": "demo",
       "holdout_acc": 1.0,
       "n_holdout": 330,
+      "oos": null,
+      "live_verified": false,
       "conformal": {
         "alpha_0.05": {
           "qhat": 0.0008,
@@ -161,8 +172,15 @@
         "voirie_trottoir"
       ],
       "status": "demo",
-      "holdout_acc": null,
+      "holdout_acc": 0.997,
       "n_holdout": 330,
+      "oos": {
+        "oos_recall": 0.909,
+        "id_oos_recall": 0.833,
+        "far_oos_recall": 1.0,
+        "in_scope_false_oos": 0.0
+      },
+      "live_verified": true,
       "conformal": null,
       "license": "Taxonomy ODbL Mairie de Paris; synthetic utterances Apache-2.0",
       "pricing": {
@@ -336,6 +354,8 @@
       "status": "certified",
       "holdout_acc": 0.738,
       "n_holdout": 5500,
+      "oos": null,
+      "live_verified": false,
       "conformal": {
         "alpha_015": {
           "auto": 0.399,
@@ -372,6 +392,8 @@
       "status": "demo",
       "holdout_acc": 0.5137,
       "n_holdout": 4995,
+      "oos": null,
+      "live_verified": false,
       "conformal": {
         "alpha_0.15": {
           "qhat": 0.8667,
@@ -420,6 +442,8 @@
       "status": "demo",
       "holdout_acc": null,
       "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
       "conformal": null,
       "license": "Apache-2.0",
       "pricing": {
@@ -449,6 +473,13 @@
       "status": "demo",
       "holdout_acc": 1.0,
       "n_holdout": null,
+      "oos": {
+        "oos_recall": 0.9,
+        "id_oos_recall": 0.9,
+        "far_oos_recall": 0.9,
+        "in_scope_false_oos": 0.0
+      },
+      "live_verified": true,
       "conformal": null,
       "license": "/tmp/hd_old/LICENSE.txt",
       "pricing": {

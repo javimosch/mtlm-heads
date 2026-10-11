@@ -22,6 +22,9 @@ for fn in sorted(os.listdir(LANES)):
         ev = json.loads(t.extractfile("eval.json").read())
     sha = hashlib.sha256(open(path, "rb").read()).hexdigest()
     name_ver = fn[: -len(".lanepack.tar.gz")]
+    # eval.json key names vary across emitters — normalize to index fields
+    acc = ev.get("holdout_acc") or ev.get("in_scope_holdout_acc_trainonly") or ev.get("in_scope_acc_trainonly")
+    oos = {k: ev[k] for k in ("oos_recall", "id_oos_recall", "far_oos_recall", "in_scope_false_oos") if k in ev}
     entries.append({
         "name": man["name"],
         "version": man["version"],
@@ -31,9 +34,11 @@ for fn in sorted(os.listdir(LANES)):
         "head_sha256": man["head_sha256"],
         "classes": len(man["taxonomy"]),
         "taxonomy": man["taxonomy"],
-        "status": man.get("status") or ev.get("status") or ("certified" if ev.get("holdout_acc") else "demo"),
-        "holdout_acc": ev.get("holdout_acc"),
+        "status": man.get("status") or ev.get("status") or ("certified" if acc else "demo"),
+        "holdout_acc": acc,
         "n_holdout": ev.get("n_holdout"),
+        "oos": oos or None,
+        "live_verified": bool(man.get("live_verified") or ev.get("live_verified")),
         "conformal": ev.get("conformal"),
         "license": man["license"],
         "pricing": man.get("pricing", {"tier": "free"}),
