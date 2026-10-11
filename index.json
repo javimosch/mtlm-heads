@@ -1,8 +1,68 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791688993,
+  "generated_at": 1791690384,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
+    {
+      "name": "civic",
+      "version": "0.1.0",
+      "file": "civic-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic-0.1.0.lanepack.tar.gz",
+      "sha256": "1907a4c8731cb5e2b6bb825a7781999f1295fb43b79b60bc445c796fa2ec95a5",
+      "head_sha256": "8a6393b45db910987ae8b8ccc789e13be427157c27536e7eb21e0780bae8269a",
+      "classes": 13,
+      "taxonomy": [
+        "animals",
+        "drains_flooding",
+        "fly_tipping",
+        "graffiti_flyposting",
+        "other",
+        "parking_vehicles",
+        "parks_green",
+        "pavement_footpath",
+        "pothole",
+        "signs_signals_markings",
+        "street_cleaning_waste",
+        "street_lighting",
+        "trees_vegetation"
+      ],
+      "status": "certified",
+      "holdout_acc": 0.9681,
+      "n_holdout": 941,
+      "conformal": {
+        "alpha_0.15": {
+          "qhat": 0.0392,
+          "auto": 0.8098,
+          "err": 0.0013,
+          "avgset": 0.81
+        },
+        "alpha_0.1": {
+          "qhat": 0.0665,
+          "auto": 0.8587,
+          "err": 0.0012,
+          "avgset": 0.859
+        },
+        "alpha_0.05": {
+          "qhat": 0.2288,
+          "auto": 0.9373,
+          "err": 0.0079,
+          "avgset": 0.937
+        },
+        "alpha_0.02": {
+          "qhat": 0.8996,
+          "auto": 0.9139,
+          "err": 0.007,
+          "avgset": 1.112
+        }
+      },
+      "license": "CC-BY attribution (mySociety/FixMyStreet source reports); weights Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "FixMyStreet Open311 API (public citizen reports, fetched 2026-10-11); 320 council labels -> 13 canonical routes; train 3751/holdout 941; tools/emit_civic.py",
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791690380
+    },
     {
       "name": "clinc150",
       "version": "0.1.2",
