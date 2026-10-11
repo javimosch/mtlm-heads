@@ -84,6 +84,11 @@ stays installable by exact pin (immutability) but is excluded from
 latest-resolution, shows a badge on the catalog, and `lane_install`
 warns with the migration path on both `--apply` and `--check`.
 
+`build_index.py` validates both sidecars before writing: an unknown
+lane name in `floors.json`, an unknown `name@version` in
+`deprecated.json`, or a `superseded_by` pointing at an unpublished
+pack fails the build with exit 1 — sidecar typos never silently no-op.
+
 ## Install a lane
 
 ```sh

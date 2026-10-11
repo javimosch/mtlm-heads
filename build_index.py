@@ -6,7 +6,7 @@ for consumers that browse/resolve/install lanes.
 
   python3 build_index.py
 """
-import hashlib, json, os, tarfile, time
+import hashlib, json, os, sys, tarfile, time
 
 REPO = os.path.dirname(os.path.abspath(__file__))
 LANES = os.path.join(REPO, "lanes")
@@ -58,6 +58,20 @@ for fn in sorted(os.listdir(LANES)):
         "runtime": man["runtime"],
         "published_at": man["created"],
     })
+
+names = {e["name"] for e in entries}
+name_vers = {f"{e['name']}@{e['version']}" for e in entries}
+errors = []
+for k in floors:
+    if not k.startswith("_") and k not in names:
+        errors.append(f"floors.json: '{k}' is not a catalog lane")
+for k, v in deprecated.items():
+    if k not in name_vers:
+        errors.append(f"deprecated.json: '{k}' is not a published pack")
+    elif v.get("superseded_by") and v["superseded_by"] not in name_vers:
+        errors.append(f"deprecated.json: '{k}' superseded_by '{v['superseded_by']}' is not a published pack")
+if errors:
+    print(json.dumps({"ok": False, "errors": errors})); sys.exit(1)
 
 index = {
     "index_schema_version": "mtlm-index/1",
