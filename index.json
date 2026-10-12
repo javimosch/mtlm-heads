@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791756725,
+  "generated_at": 1791783919,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -925,9 +925,9 @@
         "min_conf": null,
         "note": "use conformal qhat, not a confidence floor - neutral is the negative class"
       },
-      "yanked": null,
-      "superseded_by": null,
-      "yank_reason": null,
+      "yanked": true,
+      "superseded_by": "eq_tone@0.2.0",
+      "yank_reason": "superseded \u2014 v0.2.0 adds an explicit oos class (87.9% non-tone recall); migrate with: lane_install eq_tone@0.2.0 --apply",
       "conformal": {
         "alpha_0.15": {
           "qhat": 0.8667,
@@ -957,6 +957,45 @@
       "provenance": "GoEmotions (google-research, Reddit comments, Apache-2.0), 28 labels merged to 5 tone superclasses; trained on frozen m7router3s384 trunk via LR head. v0.1.1: manifest status field added.",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859
+    },
+    {
+      "name": "eq_tone",
+      "version": "0.2.0",
+      "file": "eq_tone-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/eq_tone-0.2.0.lanepack.tar.gz",
+      "sha256": "2e2c608b1935731c0553a35b85b1d3f859bbf83dd343f1cdfad00102ba2ddf00",
+      "head_sha256": "c9ca011880b679f65f8584c7faf902d4c8d62c07b506fe94ff66c16a4540589f",
+      "classes": 6,
+      "taxonomy": [
+        "confused",
+        "distressed",
+        "frustrated",
+        "neutral",
+        "oos",
+        "positive"
+      ],
+      "status": "demo",
+      "holdout_acc": 0.5029,
+      "n_holdout": 4995,
+      "oos": {
+        "oos_recall": 0.8789
+      },
+      "live_verified": true,
+      "operating": {
+        "min_conf": null,
+        "note": "use conformal qhat, not a confidence floor - neutral is the negative class"
+      },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0 (weights); GoEmotions dataset Apache-2.0; Reddit source text remains with its authors",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "GoEmotions (google-research, Reddit comments, Apache-2.0), 28 labels merged to 5 tone superclasses + explicit oos class (hard negatives: clinc hn, banking77). Trained on frozen m7router3s384 trunk via LR head. v0.2.0: oos class added, live-verified.",
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791783913
     },
     {
       "name": "helpdesk",
