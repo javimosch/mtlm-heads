@@ -2,7 +2,10 @@
  "_note": "recommended per-lane confidence floors measured in bench/oos_eval_catalog.json (mtlm-router). null = argmax abstain carries the lane, no useful floor. Re-measure on head/corpus change.",
  "helpdesk": {
   "min_conf": null,
-  "note": "argmax abstains 100% of held-out OOS; no floor needed"
+  "note": "argmax abstains 100% of held-out OOS; no floor needed",
+  "qhat": 0.95,
+  "qhat_note": "selective-risk on 160-row cal split (holdout_helpdesk 300 + oos_eval 20, halved): helpdesk_v2_mt \u2192 98.1% auto, ub95 1.89%, eval err 0%; helpdesk_pool_L-3_mean \u2192 93.8% auto, ub95 3.10%, eval err 0%. Both hosted aliases (helpdesk2, it_helpdesk) wired at qhat 0.95.",
+  "mondrian": "per-class qhat \u03b1=0.05: v2 96.2% auto (worst-class 88%); pool head 90.6% but worst-class 0% \u2014 one route never reaches singletons under class-conditional coverage"
  },
  "civic": {
   "min_conf": 0.5,

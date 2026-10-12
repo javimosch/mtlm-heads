@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791838046,
+  "generated_at": 1791838626,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1043,7 +1043,10 @@
       "live_verified": false,
       "operating": {
         "min_conf": null,
-        "note": "argmax abstains 100% of held-out OOS; no floor needed"
+        "note": "argmax abstains 100% of held-out OOS; no floor needed",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk on 160-row cal split (holdout_helpdesk 300 + oos_eval 20, halved): helpdesk_v2_mt \u2192 98.1% auto, ub95 1.89%, eval err 0%; helpdesk_pool_L-3_mean \u2192 93.8% auto, ub95 3.10%, eval err 0%. Both hosted aliases (helpdesk2, it_helpdesk) wired at qhat 0.95.",
+        "mondrian": "per-class qhat \u03b1=0.05: v2 96.2% auto (worst-class 88%); pool head 90.6% but worst-class 0% \u2014 one route never reaches singletons under class-conditional coverage"
       },
       "yanked": true,
       "superseded_by": "helpdesk@0.2.0",
@@ -1086,7 +1089,10 @@
       "live_verified": true,
       "operating": {
         "min_conf": null,
-        "note": "argmax abstains 100% of held-out OOS; no floor needed"
+        "note": "argmax abstains 100% of held-out OOS; no floor needed",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk on 160-row cal split (holdout_helpdesk 300 + oos_eval 20, halved): helpdesk_v2_mt \u2192 98.1% auto, ub95 1.89%, eval err 0%; helpdesk_pool_L-3_mean \u2192 93.8% auto, ub95 3.10%, eval err 0%. Both hosted aliases (helpdesk2, it_helpdesk) wired at qhat 0.95.",
+        "mondrian": "per-class qhat \u03b1=0.05: v2 96.2% auto (worst-class 88%); pool head 90.6% but worst-class 0% \u2014 one route never reaches singletons under class-conditional coverage"
       },
       "yanked": null,
       "superseded_by": null,
