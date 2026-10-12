@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791826515,
+  "generated_at": 1791827766,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -470,7 +470,9 @@
       "live_verified": false,
       "operating": {
         "min_conf": 0.7,
-        "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
+        "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): 46.5% auto, ub95 bound 4.78% (eval err 3.97%). Caveat: cal split is nearly all in-scope (32 oos rows) \u2014 the bound covers routing errors, not OOS recall."
       },
       "yanked": true,
       "superseded_by": "clinc150@0.1.4",
@@ -676,7 +678,9 @@
       "live_verified": true,
       "operating": {
         "min_conf": 0.7,
-        "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
+        "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): 46.5% auto, ub95 bound 4.78% (eval err 3.97%). Caveat: cal split is nearly all in-scope (32 oos rows) \u2014 the bound covers routing errors, not OOS recall."
       },
       "yanked": true,
       "superseded_by": "clinc150@0.1.4",
@@ -880,7 +884,9 @@
       "live_verified": true,
       "operating": {
         "min_conf": 0.7,
-        "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
+        "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): 46.5% auto, ub95 bound 4.78% (eval err 3.97%). Caveat: cal split is nearly all in-scope (32 oos rows) \u2014 the bound covers routing errors, not OOS recall."
       },
       "yanked": null,
       "superseded_by": null,

@@ -14,7 +14,9 @@
   },
   "clinc150": {
     "min_conf": 0.7,
-    "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
+    "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
+    "qhat": 0.95,
+    "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): 46.5% auto, ub95 bound 4.78% (eval err 3.97%). Caveat: cal split is nearly all in-scope (32 oos rows) \u2014 the bound covers routing errors, not OOS recall."
   },
   "eq_tone": {
     "min_conf": 0.5,
