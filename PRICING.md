@@ -14,6 +14,15 @@ conformal operating point, and recalibration support.
 | **free / certified** | head + holdout eval + conformal qhat + full provenance | Apache-2.0 | €0 |
 | **commercial lane** | certified pack + commercial-use license + 12mo recalibration window | commercial (per-domain) | per agreement |
 | **custom lane** | head trained on *your* exported route examples — your distribution, your taxonomy, your exclusivity | work-for-hire | per agreement |
+| **dedicated hosted** | single-tenant instance on bare metal, your own endpoint, all catalog lanes, no per-call metering | monthly | €99/mo |
+
+## Hosted API posture
+
+`api.mtlm-router.intrane.fr` is an **evaluation/demo tier**: a shared
+metered endpoint for trying the API and lanes before committing — latency
+and capacity there are not representative. Production clients are assigned
+a **dedicated bare-metal instance** (€99/mo, per-client endpoint, no
+metering).
 
 ## What "commercial lane" means concretely
 
