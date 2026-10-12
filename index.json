@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791836886,
+  "generated_at": 1791838046,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -241,7 +241,10 @@
       "live_verified": false,
       "operating": {
         "min_conf": null,
-        "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
+        "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk on 176-row cal split (civic_fr_holdout+oos_eval): qhat 0.95 \u2192 97.7% auto, ub95 bound 1.73%, eval err 0.58%. Head is sharply calibrated \u2014 near-binary confidence \u2014 so conformal adds a real bound at almost no automation cost. Caveat: only 22 OOS rows in cal; bound covers routing errors, not OOS recall.",
+        "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane"
       },
       "yanked": true,
       "superseded_by": "civic_fr@0.1.1",
@@ -295,7 +298,10 @@
       "live_verified": true,
       "operating": {
         "min_conf": null,
-        "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
+        "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk on 176-row cal split (civic_fr_holdout+oos_eval): qhat 0.95 \u2192 97.7% auto, ub95 bound 1.73%, eval err 0.58%. Head is sharply calibrated \u2014 near-binary confidence \u2014 so conformal adds a real bound at almost no automation cost. Caveat: only 22 OOS rows in cal; bound covers routing errors, not OOS recall.",
+        "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane"
       },
       "yanked": null,
       "superseded_by": null,
