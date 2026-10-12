@@ -19,7 +19,8 @@
   "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
   "qhat": 0.95,
   "qhat_note": "selective-risk on 176-row cal split (civic_fr_holdout+oos_eval): qhat 0.95 \u2192 97.7% auto, ub95 bound 1.73%, eval err 0.58%. Head is sharply calibrated \u2014 near-binary confidence \u2014 so conformal adds a real bound at almost no automation cost. Caveat: only 22 OOS rows in cal; bound covers routing errors, not OOS recall.",
-  "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane"
+  "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane",
+  "golden_note": "golden-gate finding 2026-10-12: head emits confident oos SINGLETONS on in-domain phrasing (civic_fr 'lampadaire en panne'->oos@1.00 despite eclairage class; bank77 'lost my card'->oos@0.93 despite card classes). Conformal can't catch singleton errors \u2014 flagged for head rework (same family as eq prompt-mismatch). tools/release_gate.py tracks."
  },
  "clinc150": {
   "min_conf": 0.7,
