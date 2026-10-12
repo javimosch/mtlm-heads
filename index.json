@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791838626,
+  "generated_at": 1791839035,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -946,8 +946,9 @@
       "oos": null,
       "live_verified": false,
       "operating": {
-        "min_conf": 0.5,
-        "note": "weak in-scope signal (median conf 0.56): conf<0.5 tone guesses leak 7.6%/62%cov; oos class already catches non-tone at argmax"
+        "min_conf": 0.9,
+        "note": "HEAD CALIBRATION WARNING (eq_test 4995-row eval, helpdesk_v2 head=eq_tone_v2): confidence nearly uninformative \u2014 floor 0.5 \u2192 62.7% auto at 39.4% error; floor 0.9 \u2192 5.6% auto at 1.4% err. No selective-risk conformal point meets \u03b1\u22640.05; best is \u03b1=0.10 at qhat 0.10 \u2192 5.6% auto \u22648.0% bound. Hosted minconf raised 0.5\u21920.9 (was the most dangerous lane). Needs retrain/recalibration, not a threshold.",
+        "mondrian": "per-class auto 7.4% at \u03b1=0.05, worst-class 0.9% (5 classes) \u2014 the head cannot discriminate within classes either"
       },
       "yanked": true,
       "superseded_by": "eq_tone@0.2.0",
@@ -1006,8 +1007,9 @@
       },
       "live_verified": true,
       "operating": {
-        "min_conf": 0.5,
-        "note": "weak in-scope signal (median conf 0.56): conf<0.5 tone guesses leak 7.6%/62%cov; oos class already catches non-tone at argmax"
+        "min_conf": 0.9,
+        "note": "HEAD CALIBRATION WARNING (eq_test 4995-row eval, helpdesk_v2 head=eq_tone_v2): confidence nearly uninformative \u2014 floor 0.5 \u2192 62.7% auto at 39.4% error; floor 0.9 \u2192 5.6% auto at 1.4% err. No selective-risk conformal point meets \u03b1\u22640.05; best is \u03b1=0.10 at qhat 0.10 \u2192 5.6% auto \u22648.0% bound. Hosted minconf raised 0.5\u21920.9 (was the most dangerous lane). Needs retrain/recalibration, not a threshold.",
+        "mondrian": "per-class auto 7.4% at \u03b1=0.05, worst-class 0.9% (5 classes) \u2014 the head cannot discriminate within classes either"
       },
       "yanked": null,
       "superseded_by": null,
