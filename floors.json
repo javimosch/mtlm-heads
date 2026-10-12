@@ -1,36 +1,39 @@
 {
-  "_note": "recommended per-lane confidence floors measured in bench/oos_eval_catalog.json (mtlm-router). null = argmax abstain carries the lane, no useful floor. Re-measure on head/corpus change.",
-  "helpdesk": {
-    "min_conf": null,
-    "note": "argmax abstains 100% of held-out OOS; no floor needed"
-  },
-  "civic": {
-    "min_conf": 0.5,
-    "note": "4% leak / 96% coverage at 0.5",
-    "qhat": 0.95,
-    "qhat_note": "selective-risk \u03b1=0.05 on 566-row eval / 565 cal (civic_holdout+civic_oos): 67.7% auto, ub95 bound 3.45%, eval err 2.09% \u2014 vs old floor-0.5's 96.8% auto at 10% unbounded err",
-    "mondrian": "per-class qhat: auto 46.1% at \u03b1=0.05 \u2014 narrow 14-route lane sustains real class-conditional automation"
-  },
-  "civic_fr": {
-    "min_conf": null,
-    "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
-  },
-  "clinc150": {
-    "min_conf": 0.7,
-    "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
-    "qhat": 0.95,
-    "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): auto 46.5% (v1) / 46.2% (v2), ub95 bound ~4.5-4.8%, eval err ~3.9%. Both hosted aliases (clinc, clinc2) wired at qhat 0.95. Caveat: cal split nearly all in-scope \u2014 bound covers routing errors, not OOS recall.",
-    "mondrian": "per-class qhat: auto 4.7% at \u03b1=0.05 \u2014 wide taxonomies route through clarification sets, not singletons"
-  },
-  "eq_tone": {
-    "min_conf": 0.5,
-    "note": "weak in-scope signal (median conf 0.56): conf<0.5 tone guesses leak 7.6%/62%cov; oos class already catches non-tone at argmax"
-  },
-  "banking77": {
-    "min_conf": 0.7,
-    "note": "leak 1.6%/coverage 58% at 0.7; id-oos trained abstain",
-    "qhat": 0.938,
-    "qhat_note": "conformal \u03b1=0.10 on 1398-row cal split (test+id-oos mix): 46.4% auto, 9.1% err among auto, 88.3% set coverage \u2014 replaces the 0.7 floor where wired",
-    "mondrian": "per-class qhat: auto collapses to 0.6% at \u03b1=0.05 \u2014 marginal auto rate is subsidized by easy classes; expect candidates[] on most traffic"
-  }
+ "_note": "recommended per-lane confidence floors measured in bench/oos_eval_catalog.json (mtlm-router). null = argmax abstain carries the lane, no useful floor. Re-measure on head/corpus change.",
+ "helpdesk": {
+  "min_conf": null,
+  "note": "argmax abstains 100% of held-out OOS; no floor needed"
+ },
+ "civic": {
+  "min_conf": 0.5,
+  "note": "4% leak / 96% coverage at 0.5",
+  "qhat": 0.95,
+  "qhat_note": "selective-risk \u03b1=0.05 on 566-row eval / 565 cal (civic_holdout+civic_oos): 67.7% auto, ub95 bound 3.45%, eval err 2.09% \u2014 vs old floor-0.5's 96.8% auto at 10% unbounded err",
+  "mondrian": "per-class qhat: auto 46.1% at \u03b1=0.05 \u2014 narrow 14-route lane sustains real class-conditional automation"
+ },
+ "civic_fr": {
+  "min_conf": null,
+  "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
+  "qhat": 0.95,
+  "qhat_note": "selective-risk on 176-row cal split (civic_fr_holdout+oos_eval): qhat 0.95 \u2192 97.7% auto, ub95 bound 1.73%, eval err 0.58%. Head is sharply calibrated \u2014 near-binary confidence \u2014 so conformal adds a real bound at almost no automation cost. Caveat: only 22 OOS rows in cal; bound covers routing errors, not OOS recall.",
+  "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane"
+ },
+ "clinc150": {
+  "min_conf": 0.7,
+  "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
+  "qhat": 0.95,
+  "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): auto 46.5% (v1) / 46.2% (v2), ub95 bound ~4.5-4.8%, eval err ~3.9%. Both hosted aliases (clinc, clinc2) wired at qhat 0.95. Caveat: cal split nearly all in-scope \u2014 bound covers routing errors, not OOS recall.",
+  "mondrian": "per-class qhat: auto 4.7% at \u03b1=0.05 \u2014 wide taxonomies route through clarification sets, not singletons"
+ },
+ "eq_tone": {
+  "min_conf": 0.5,
+  "note": "weak in-scope signal (median conf 0.56): conf<0.5 tone guesses leak 7.6%/62%cov; oos class already catches non-tone at argmax"
+ },
+ "banking77": {
+  "min_conf": 0.7,
+  "note": "leak 1.6%/coverage 58% at 0.7; id-oos trained abstain",
+  "qhat": 0.938,
+  "qhat_note": "conformal \u03b1=0.10 on 1398-row cal split (test+id-oos mix): 46.4% auto, 9.1% err among auto, 88.3% set coverage \u2014 replaces the 0.7 floor where wired",
+  "mondrian": "per-class qhat: auto collapses to 0.6% at \u03b1=0.05 \u2014 marginal auto rate is subsidized by easy classes; expect candidates[] on most traffic"
+ }
 }
