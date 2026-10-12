@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791827766,
+  "generated_at": 1791829624,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -117,7 +117,9 @@
       "live_verified": false,
       "operating": {
         "min_conf": 0.5,
-        "note": "4% leak / 96% coverage at 0.5"
+        "note": "4% leak / 96% coverage at 0.5",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk \u03b1=0.05 on 566-row eval / 565 cal (civic_holdout+civic_oos): 67.7% auto, ub95 bound 3.45%, eval err 2.09% \u2014 vs old floor-0.5's 96.8% auto at 10% unbounded err"
       },
       "yanked": true,
       "superseded_by": "civic@0.2.1",
@@ -192,7 +194,9 @@
       "live_verified": true,
       "operating": {
         "min_conf": 0.5,
-        "note": "4% leak / 96% coverage at 0.5"
+        "note": "4% leak / 96% coverage at 0.5",
+        "qhat": 0.95,
+        "qhat_note": "selective-risk \u03b1=0.05 on 566-row eval / 565 cal (civic_holdout+civic_oos): 67.7% auto, ub95 bound 3.45%, eval err 2.09% \u2014 vs old floor-0.5's 96.8% auto at 10% unbounded err"
       },
       "yanked": null,
       "superseded_by": null,
@@ -472,7 +476,7 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
         "qhat": 0.95,
-        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): 46.5% auto, ub95 bound 4.78% (eval err 3.97%). Caveat: cal split is nearly all in-scope (32 oos rows) \u2014 the bound covers routing errors, not OOS recall."
+        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): auto 46.5% (v1) / 46.2% (v2), ub95 bound ~4.5-4.8%, eval err ~3.9%. Both hosted aliases (clinc, clinc2) wired at qhat 0.95. Caveat: cal split nearly all in-scope \u2014 bound covers routing errors, not OOS recall."
       },
       "yanked": true,
       "superseded_by": "clinc150@0.1.4",
@@ -680,7 +684,7 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
         "qhat": 0.95,
-        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): 46.5% auto, ub95 bound 4.78% (eval err 3.97%). Caveat: cal split is nearly all in-scope (32 oos rows) \u2014 the bound covers routing errors, not OOS recall."
+        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): auto 46.5% (v1) / 46.2% (v2), ub95 bound ~4.5-4.8%, eval err ~3.9%. Both hosted aliases (clinc, clinc2) wired at qhat 0.95. Caveat: cal split nearly all in-scope \u2014 bound covers routing errors, not OOS recall."
       },
       "yanked": true,
       "superseded_by": "clinc150@0.1.4",
@@ -886,7 +890,7 @@
         "min_conf": 0.7,
         "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
         "qhat": 0.95,
-        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): 46.5% auto, ub95 bound 4.78% (eval err 3.97%). Caveat: cal split is nearly all in-scope (32 oos rows) \u2014 the bound covers routing errors, not OOS recall."
+        "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): auto 46.5% (v1) / 46.2% (v2), ub95 bound ~4.5-4.8%, eval err ~3.9%. Both hosted aliases (clinc, clinc2) wired at qhat 0.95. Caveat: cal split nearly all in-scope \u2014 bound covers routing errors, not OOS recall."
       },
       "yanked": null,
       "superseded_by": null,
