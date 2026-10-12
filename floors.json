@@ -26,7 +26,7 @@
   "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
   "qhat": 0.95,
   "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): auto 46.5% (v1) / 46.2% (v2), ub95 bound ~4.5-4.8%, eval err ~3.9%. Both hosted aliases (clinc, clinc2) wired at qhat 0.95. Caveat: cal split nearly all in-scope \u2014 bound covers routing errors, not OOS recall.",
-  "mondrian": "per-class qhat: auto 4.7% at \u03b1=0.05 \u2014 wide taxonomies route through clarification sets, not singletons"
+  "mondrian": "per-class qhat: auto 4.7% at \u03b1=0.05 \u2014 wide taxonomies route through clarification sets, not singletons; confusion is local though \u2014 72.6% of multi-sets fall inside one co-occurrence cluster (tools/set_cluster.py, qhat 0.95): a coarse\u2192fine hierarchy could automate at parent level for most abstains; bank77 contrast: 100% one cluster, no hierarchical rescue"
  },
  "eq_tone": {
   "min_conf": 0.9,
