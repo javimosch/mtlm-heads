@@ -1,27 +1,27 @@
 {
- "_note": "recommended per-lane confidence floors measured in bench/oos_eval_catalog.json (mtlm-router). null = argmax abstain carries the lane, no useful floor. Re-measure on head/corpus change.",
- "helpdesk": {
-  "min_conf": null,
-  "note": "argmax abstains 100% of held-out OOS; no floor needed"
- },
- "civic": {
-  "min_conf": 0.5,
-  "note": "4% leak / 96% coverage at 0.5"
- },
- "civic_fr": {
-  "min_conf": null,
-  "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
- },
- "clinc150": {
-  "min_conf": 0.7,
-  "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
- },
- "eq_tone": {
-  "min_conf": null,
-  "note": "use conformal qhat, not a confidence floor - neutral is the negative class"
- },
- "banking77": {
-  "min_conf": 0.7,
-  "note": "leak 1.6%/coverage 58% at 0.7; id-oos trained abstain"
- }
+  "_note": "recommended per-lane confidence floors measured in bench/oos_eval_catalog.json (mtlm-router). null = argmax abstain carries the lane, no useful floor. Re-measure on head/corpus change.",
+  "helpdesk": {
+    "min_conf": null,
+    "note": "argmax abstains 100% of held-out OOS; no floor needed"
+  },
+  "civic": {
+    "min_conf": 0.5,
+    "note": "4% leak / 96% coverage at 0.5"
+  },
+  "civic_fr": {
+    "min_conf": null,
+    "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it"
+  },
+  "clinc150": {
+    "min_conf": 0.7,
+    "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate"
+  },
+  "eq_tone": {
+    "min_conf": 0.5,
+    "note": "weak in-scope signal (median conf 0.56): conf<0.5 tone guesses leak 7.6%/62%cov; oos class already catches non-tone at argmax"
+  },
+  "banking77": {
+    "min_conf": 0.7,
+    "note": "leak 1.6%/coverage 58% at 0.7; id-oos trained abstain"
+  }
 }
