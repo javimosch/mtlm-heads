@@ -10,16 +10,23 @@ before you trust the lane.
 
 ## Catalog
 
+<!-- lanes:start -->
 | lane | version | classes | holdout | status |
 |---|---|---|---|---|
-| **civic** | 0.2.1 | 13 routes + explicit `oos` class — OOS recall 96.8%, live-verified | free, demo (`lanes/civic-0.2.1.lanepack.tar.gz`) |
-| civic (old) | 0.1.0 | 13 civic defect routes (FixMyStreet) | **96.8%** on 941-row holdout · conformal α=.05 → 93.7% auto @ 0.79% err | free, certified (`lanes/civic-0.1.0.lanepack.tar.gz`) |
+| **civic** | 0.2.1 | 13 routes + explicit `oos` class — OOS recall 96.8%, live-verified | 86.6% | free, demo (`lanes/civic-0.2.1.lanepack.tar.gz`) |
 | **clinc150** | 0.1.4 | 150 generic intents + `oos` — hard-negative retrain | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.4.lanepack.tar.gz`) |
 | **banking77** | 0.1.0 | 50 banking intents + `oos` | 73.3% in-scope · **84.4%** ID-OOS recall · 70.2% OOD-OOS · leak 1.6%/cov 58% @ conf 0.7 | free, certified (`lanes/banking77-0.1.0.lanepack.tar.gz`) |
 | **civic_fr** | 0.1.1 | 11 FR routes + `oos` — OOS recall 90.9%, live-verified | template corpus; natural phrasings abstain (honest) | free, demo (`lanes/civic_fr-0.1.1.lanepack.tar.gz`) |
-| **helpdesk** | 0.1.1 | 5 IT routes + escalate | demo pack — no certified holdout | free (`lanes/helpdesk-0.1.1.lanepack.tar.gz`) |
-| **helpdesk** | 0.2.0 | 6 IT routes + `oos` | demo — OOS recall 0.90 on hand-written negatives, live-verified + parity-checked | free (`lanes/helpdesk-0.2.0.lanepack.tar.gz`) |
+| **helpdesk** | 0.2.0 | 6 IT routes + `oos` | demo — OOS recall 0.90 on hand-written negatives, live-verified + parity-checked | free, demo (`lanes/helpdesk-0.2.0.lanepack.tar.gz`) |
 | **eq_tone** | 0.2.0 | 5 tone classes + `oos` — hard-negative retrain | ~50% in-scope (weak but honest, see note) · **87.9%** OOS recall on non-tone text · floor conf≥0.5 | free, demo (`lanes/eq_tone-0.2.0.lanepack.tar.gz`) |
+| civic (old) | 0.1.0 | 13 civic defect routes (FixMyStreet) | **96.8%** on 941-row holdout · conformal α=.05 → 93.7% auto @ 0.79% err | free, certified (`lanes/civic-0.1.0.lanepack.tar.gz`) |
+| civic_fr (old) | 0.1.0 | 11 FR routes + `oos` — template corpus (superseded by 0.1.1 retrain) | 100.0% | free, demo (`lanes/civic_fr-0.1.0.lanepack.tar.gz`) |
+| clinc150 (old) | 0.1.2 | 150 generic intents + `oos` (superseded — labels.txt dropped 3 classes) | 73.8% | free, certified (`lanes/clinc150-0.1.2.lanepack.tar.gz`) |
+| clinc150 (old) | 0.1.3 | 150 generic intents + `oos` (superseded by 0.1.4 hard-negative retrain) | 73.8% | free, certified (`lanes/clinc150-0.1.3.lanepack.tar.gz`) |
+| eq_tone (old) | 0.1.1 | 5 tone classes, no `oos` (superseded by 0.2.0 hard-negative retrain) | 51.4% | free, demo (`lanes/eq_tone-0.1.1.lanepack.tar.gz`) |
+| helpdesk (old) | 0.1.1 | 5 IT routes + escalate | demo pack — no certified holdout | free, demo (`lanes/helpdesk-0.1.1.lanepack.tar.gz`) |
+
+<!-- lanes:end -->
 
 `eq_tone` is published deliberately: a generic-vocab public dataset gives a weak
 lane (cf. clinc150's stronger 73.8%), and its honest conformal numbers show *why*

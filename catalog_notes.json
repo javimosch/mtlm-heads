@@ -1,0 +1,48 @@
+{
+  "_": "Curated per-pack display notes for the README catalog table (render_readme.py). Keys are '<lane>@<version>'. 'desc' fills the classes column, 'holdout' fills the holdout column. Mechanical fields (name/version/classes/status/file) always come from index.json — never duplicate them here.",
+
+  "civic@0.2.1": {
+    "desc": "13 routes + explicit `oos` class — OOS recall 96.8%, live-verified"
+  },
+  "civic@0.1.0": {
+    "desc": "13 civic defect routes (FixMyStreet)",
+    "holdout": "**96.8%** on 941-row holdout · conformal α=.05 → 93.7% auto @ 0.79% err"
+  },
+  "clinc150@0.1.4": {
+    "desc": "150 generic intents + `oos` — hard-negative retrain",
+    "holdout": "73.8% · OOS AUROC 0.842"
+  },
+  "banking77@0.1.0": {
+    "desc": "50 banking intents + `oos`",
+    "holdout": "73.3% in-scope · **84.4%** ID-OOS recall · 70.2% OOD-OOS · leak 1.6%/cov 58% @ conf 0.7"
+  },
+  "civic_fr@0.1.1": {
+    "desc": "11 FR routes + `oos` — OOS recall 90.9%, live-verified",
+    "holdout": "template corpus; natural phrasings abstain (honest)"
+  },
+  "helpdesk@0.1.1": {
+    "desc": "5 IT routes + escalate",
+    "holdout": "demo pack — no certified holdout"
+  },
+  "helpdesk@0.2.0": {
+    "desc": "6 IT routes + `oos`",
+    "holdout": "demo — OOS recall 0.90 on hand-written negatives, live-verified + parity-checked"
+  },
+  "eq_tone@0.2.0": {
+    "desc": "5 tone classes + `oos` — hard-negative retrain",
+    "holdout": "~50% in-scope (weak but honest, see note) · **87.9%** OOS recall on non-tone text · floor conf≥0.5"
+  },
+
+  "civic_fr@0.1.0": {
+    "desc": "11 FR routes + `oos` — template corpus (superseded by 0.1.1 retrain)"
+  },
+  "clinc150@0.1.2": {
+    "desc": "150 generic intents + `oos` (superseded — labels.txt dropped 3 classes)"
+  },
+  "clinc150@0.1.3": {
+    "desc": "150 generic intents + `oos` (superseded by 0.1.4 hard-negative retrain)"
+  },
+  "eq_tone@0.1.1": {
+    "desc": "5 tone classes, no `oos` (superseded by 0.2.0 hard-negative retrain)"
+  }
+}
