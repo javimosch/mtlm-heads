@@ -5,14 +5,21 @@
   "note": "argmax abstains 100% of held-out OOS; no floor needed",
   "qhat": 0.95,
   "qhat_note": "selective-risk on 160-row cal split (holdout_helpdesk 300 + oos_eval 20, halved): helpdesk_v2_mt \u2192 98.1% auto, ub95 1.89%, eval err 0%; helpdesk_pool_L-3_mean \u2192 93.8% auto, ub95 3.10%, eval err 0%. Both hosted aliases (helpdesk2, it_helpdesk) wired at qhat 0.95.",
-  "mondrian": "per-class qhat \u03b1=0.05: v2 96.2% auto (worst-class 88%); pool head 90.6% but worst-class 0% \u2014 one route never reaches singletons under class-conditional coverage"
+  "mondrian": "per-class qhat \u03b1=0.05: v2 96.2% auto (worst-class 88%); pool head 90.6% but worst-class 0% \u2014 one route never reaches singletons under class-conditional coverage",
+  "limitations": [
+   "7-class taxonomy incl. oos \u2014 out-of-taxonomy queries correctly resolve to oos/escalate"
+  ]
  },
  "civic": {
   "min_conf": 0.5,
   "note": "4% leak / 96% coverage at 0.5",
   "qhat": 0.95,
   "qhat_note": "selective-risk \u03b1=0.05 on 566-row eval / 565 cal (civic_holdout+civic_oos): 67.7% auto, ub95 bound 3.45%, eval err 2.09% \u2014 vs old floor-0.5's 96.8% auto at 10% unbounded err",
-  "mondrian": "per-class qhat: auto 46.1% at \u03b1=0.05 \u2014 narrow 14-route lane sustains real class-conditional automation"
+  "mondrian": "per-class qhat: auto 46.1% at \u03b1=0.05 \u2014 narrow 14-route lane sustains real class-conditional automation",
+  "limitations": [
+   "14-class narrow lane \u2014 genuine per-class automation viable (46%)",
+   "EN civic corpus only"
+  ]
  },
  "civic_fr": {
   "min_conf": null,
@@ -20,25 +27,42 @@
   "qhat": 0.95,
   "qhat_note": "selective-risk on 176-row cal split (civic_fr_holdout+oos_eval): qhat 0.95 \u2192 97.7% auto, ub95 bound 1.73%, eval err 0.58%. Head is sharply calibrated \u2014 near-binary confidence \u2014 so conformal adds a real bound at almost no automation cost. Caveat: only 22 OOS rows in cal; bound covers routing errors, not OOS recall.",
   "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane",
-  "golden_note": "golden-gate finding 2026-10-12: head emits confident oos SINGLETONS on in-domain phrasing (civic_fr 'lampadaire en panne'->oos@1.00 despite eclairage class; bank77 'lost my card'->oos@0.93 despite card classes). Conformal can't catch singleton errors \u2014 flagged for head rework (same family as eq prompt-mismatch). tools/release_gate.py tracks."
+  "golden_note": "golden-gate finding 2026-10-12: head emits confident oos SINGLETONS on in-domain phrasing (civic_fr 'lampadaire en panne'->oos@1.00 despite eclairage class; bank77 'lost my card'->oos@0.93 despite card classes). Conformal can't catch singleton errors \u2014 flagged for head rework (same family as eq prompt-mismatch). tools/release_gate.py tracks.",
+  "limitations": [
+   "synthetic corpus: in-scope numbers reflect template separability, not production skill",
+   "confident oos singletons on natural phrasing ('lampadaire en panne'->oos@1.00) \u2014 corpus narrowness shows as confident oos, not abstention",
+   "best-calibrated lane under mondrian (89% per-class auto, 97.7% marginal)"
+  ]
  },
  "clinc150": {
   "min_conf": 0.7,
   "note": "7.8% leak / 69% coverage at 0.7; 15-20% argmax abstain is weak, the floor is the gate",
   "qhat": 0.95,
   "qhat_note": "selective-risk \u03b1=0.05 on 2766-row cal split (clinc_holdout+hn_eval): auto 46.5% (v1) / 46.2% (v2), ub95 bound ~4.5-4.8%, eval err ~3.9%. Both hosted aliases (clinc, clinc2) wired at qhat 0.95. Caveat: cal split nearly all in-scope \u2014 bound covers routing errors, not OOS recall.",
-  "mondrian": "per-class qhat: auto 4.7% at \u03b1=0.05 \u2014 wide taxonomies route through clarification sets, not singletons; confusion is local though \u2014 72.6% of multi-sets fall inside one co-occurrence cluster (tools/set_cluster.py, qhat 0.95): a coarse\u2192fine hierarchy could automate at parent level for most abstains; bank77 contrast: 100% one cluster, no hierarchical rescue"
+  "mondrian": "per-class qhat: auto 4.7% at \u03b1=0.05 \u2014 wide taxonomies route through clarification sets, not singletons; confusion is local though \u2014 72.6% of multi-sets fall inside one co-occurrence cluster (tools/set_cluster.py, qhat 0.95): a coarse\u2192fine hierarchy could automate at parent level for most abstains; bank77 contrast: 100% one cluster, no hierarchical rescue",
+  "limitations": [
+   "151 classes: mondrian auto ~4-5%; candidates[] clarification is the primary interaction mode",
+   "cal split had ~32 oos rows \u2014 the bound covers routing errors, not oos recall"
+  ]
  },
  "eq_tone": {
   "min_conf": 0.9,
   "note": "HEAD CALIBRATION WARNING (eq_test 4995-row eval, helpdesk_v2 head=eq_tone_v2): confidence nearly uninformative \u2014 floor 0.5 \u2192 62.7% auto at 39.4% error; floor 0.9 \u2192 5.6% auto at 1.4% err. No selective-risk conformal point meets \u03b1\u22640.05; best is \u03b1=0.10 at qhat 0.10 \u2192 5.6% auto \u22648.0% bound. Hosted minconf raised 0.5\u21920.9 (was the most dangerous lane). Needs retrain/recalibration, not a threshold.",
-  "mondrian": "per-class auto 7.4% at \u03b1=0.05, worst-class 0.9% (5 classes) \u2014 the head cannot discriminate within classes either"
+  "mondrian": "per-class auto 7.4% at \u03b1=0.05, worst-class 0.9% (5 classes) \u2014 the head cannot discriminate within classes either",
+  "limitations": [
+   "miscalibrated at runtime: features were extracted under a non-decide_sys prompt (train/serve mismatch); retrain in flight 2026-10-12",
+   "interim minconf 0.9 \u2014 automates only ~5.6% of traffic; treat as triage signal"
+  ]
  },
  "banking77": {
   "min_conf": 0.7,
   "note": "leak 1.6%/coverage 58% at 0.7; id-oos trained abstain",
   "qhat": 0.938,
   "qhat_note": "conformal \u03b1=0.10 on 1398-row cal split (test+id-oos mix): 46.4% auto, 9.1% err among auto, 88.3% set coverage \u2014 replaces the 0.7 floor where wired",
-  "mondrian": "per-class qhat: auto collapses to 0.6% at \u03b1=0.05 \u2014 marginal auto rate is subsidized by easy classes; expect candidates[] on most traffic"
+  "mondrian": "per-class qhat: auto collapses to 0.6% at \u03b1=0.05 \u2014 marginal auto rate is subsidized by easy classes; expect candidates[] on most traffic",
+  "limitations": [
+   "51-class taxonomy: class-conditional auto ~0.6% \u2014 clarification-first UX, not automation",
+   "golden-gate 2026-10-12: confident oos singleton on in-domain phrasing ('lost my card'->oos@0.93); conformal cannot catch singleton errors"
+  ]
  }
 }
