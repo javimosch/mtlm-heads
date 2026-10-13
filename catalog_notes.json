@@ -29,7 +29,7 @@
  },
  "eq_tone@0.2.0": {
   "desc": "5 tone classes + `oos` — hard-negative retrain",
-  "holdout": "~50% in-scope (weak but honest, see note) · **87.9%** OOS recall on non-tone text · floor conf≥0.5"
+  "holdout": "~50% in-scope (weak but honest, see note) · **87.9%** OOS recall on non-tone text · triage-only: floor conf≥0.9 (~5.6% auto)"
  },
  "civic_fr@0.1.0": {
   "desc": "11 FR routes + `oos` — template corpus (superseded by 0.1.1 retrain)"

@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791879820,
+  "generated_at": 1791883572,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1055,11 +1055,11 @@
       "live_verified": false,
       "operating": {
         "min_conf": 0.9,
-        "note": "HEAD CALIBRATION WARNING (eq_test 4995-row eval, helpdesk_v2 head=eq_tone_v2): confidence nearly uninformative \u2014 floor 0.5 \u2192 62.7% auto at 39.4% error; floor 0.9 \u2192 5.6% auto at 1.4% err. No selective-risk conformal point meets \u03b1\u22640.05; best is \u03b1=0.10 at qhat 0.10 \u2192 5.6% auto \u22648.0% bound. Hosted minconf raised 0.5\u21920.9 (was the most dangerous lane). Needs retrain/recalibration, not a threshold.",
+        "note": "HEAD CALIBRATION WARNING (eq_test 4995-row eval, head=eq_tone_v2): confidence nearly uninformative \u2014 floor 0.5 \u2192 62.7% auto at 39.4% error; floor 0.9 \u2192 5.6% auto at 1.4% err. No selective-risk conformal point meets \u03b1\u22640.05; best is \u03b1=0.10 at qhat 0.10 \u2192 5.6% auto \u22648.0% bound. Hosted minconf 0.9. eq_tone_v3 retrain (matched DECIDE_SYS features) evaluated and REJECTED \u2014 no improvement; the ~50% ceiling is the trunk's, not a data artifact.",
         "mondrian": "per-class auto 7.4% at \u03b1=0.05, worst-class 0.9% (5 classes) \u2014 the head cannot discriminate within classes either",
         "limitations": [
-          "miscalibrated at runtime: features were extracted under a non-decide_sys prompt (train/serve mismatch); retrain in flight 2026-10-12",
-          "interim minconf 0.9 \u2014 automates only ~5.6% of traffic; treat as triage signal"
+          "trunk ceiling, not a prompt artifact: eq_tone_v3 (retrain under matched DECIDE_SYS features, label-smoothing sweep) evaluated 2026-10-13 and REJECTED \u2014 selective curve no better than v2 (0.9 floor: 5.2% auto @ 4.6% err vs v2's 5.6% @ 1.4%). ~50% accuracy on 6-way tone is what the ~7M trunk can do; lane stays triage-only",
+          "minconf 0.9 in production \u2014 automates only ~5.6% of traffic at ~1.4% err; below that, calibration gives no useful bound"
         ]
       },
       "yanked": true,
@@ -1120,11 +1120,11 @@
       "live_verified": true,
       "operating": {
         "min_conf": 0.9,
-        "note": "HEAD CALIBRATION WARNING (eq_test 4995-row eval, helpdesk_v2 head=eq_tone_v2): confidence nearly uninformative \u2014 floor 0.5 \u2192 62.7% auto at 39.4% error; floor 0.9 \u2192 5.6% auto at 1.4% err. No selective-risk conformal point meets \u03b1\u22640.05; best is \u03b1=0.10 at qhat 0.10 \u2192 5.6% auto \u22648.0% bound. Hosted minconf raised 0.5\u21920.9 (was the most dangerous lane). Needs retrain/recalibration, not a threshold.",
+        "note": "HEAD CALIBRATION WARNING (eq_test 4995-row eval, head=eq_tone_v2): confidence nearly uninformative \u2014 floor 0.5 \u2192 62.7% auto at 39.4% error; floor 0.9 \u2192 5.6% auto at 1.4% err. No selective-risk conformal point meets \u03b1\u22640.05; best is \u03b1=0.10 at qhat 0.10 \u2192 5.6% auto \u22648.0% bound. Hosted minconf 0.9. eq_tone_v3 retrain (matched DECIDE_SYS features) evaluated and REJECTED \u2014 no improvement; the ~50% ceiling is the trunk's, not a data artifact.",
         "mondrian": "per-class auto 7.4% at \u03b1=0.05, worst-class 0.9% (5 classes) \u2014 the head cannot discriminate within classes either",
         "limitations": [
-          "miscalibrated at runtime: features were extracted under a non-decide_sys prompt (train/serve mismatch); retrain in flight 2026-10-12",
-          "interim minconf 0.9 \u2014 automates only ~5.6% of traffic; treat as triage signal"
+          "trunk ceiling, not a prompt artifact: eq_tone_v3 (retrain under matched DECIDE_SYS features, label-smoothing sweep) evaluated 2026-10-13 and REJECTED \u2014 selective curve no better than v2 (0.9 floor: 5.2% auto @ 4.6% err vs v2's 5.6% @ 1.4%). ~50% accuracy on 6-way tone is what the ~7M trunk can do; lane stays triage-only",
+          "minconf 0.9 in production \u2014 automates only ~5.6% of traffic at ~1.4% err; below that, calibration gives no useful bound"
         ]
       },
       "yanked": null,
