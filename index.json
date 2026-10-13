@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791842285,
+  "generated_at": 1791879820,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -76,8 +76,9 @@
         "qhat_note": "conformal \u03b1=0.10 on 1398-row cal split (test+id-oos mix): 46.4% auto, 9.1% err among auto, 88.3% set coverage \u2014 replaces the 0.7 floor where wired",
         "mondrian": "per-class qhat: auto collapses to 0.6% at \u03b1=0.05 \u2014 marginal auto rate is subsidized by easy classes; expect candidates[] on most traffic",
         "limitations": [
-          "51-class taxonomy: class-conditional auto ~0.6% \u2014 clarification-first UX, not automation",
-          "golden-gate 2026-10-12: confident oos singleton on in-domain phrasing ('lost my card'->oos@0.93); conformal cannot catch singleton errors"
+          "bank50 subset: only 50 of banking77's 77 classes \u2014 queries for absent classes (e.g. lost_or_stolen_card) correctly return oos",
+          "idoos training set contains ~734 'card'-mentioning rows labeled oos that overlap real card classes (e.g. card-arrival phrasings) \u2014 contaminates card-* classes; retrain-with-relabeling would raise card-class recall",
+          "clarification-first lane: per-class conformal automation near zero; candidates[] is the terminal UX"
         ]
       },
       "yanked": null,
@@ -254,13 +255,13 @@
       "operating": {
         "min_conf": null,
         "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
-        "qhat": 0.95,
-        "qhat_note": "selective-risk on 176-row cal split (civic_fr_holdout+oos_eval): qhat 0.95 \u2192 97.7% auto, ub95 bound 1.73%, eval err 0.58%. Head is sharply calibrated \u2014 near-binary confidence \u2014 so conformal adds a real bound at almost no automation cost. Caveat: only 22 OOS rows in cal; bound covers routing errors, not OOS recall.",
+        "qhat": 0.746,
+        "qhat_note": "v3w head (v2 corpus + 110 natural-phrasing rows x4 weight): conformal on 352-row cal split, alpha=0.02 -> qhat 0.746. Holdout: 96.7% auto, err_auto 0.31%, coverage 99.7%. Natural eval (22 phrasings): auto 86.4%, err 5.26%, coverage 95.5%. vs v2 head: natural_eval 7/22 -> 22/22 (route-or-candidate).",
         "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane",
-        "golden_note": "golden-gate finding 2026-10-12: head emits confident oos SINGLETONS on in-domain phrasing (civic_fr 'lampadaire en panne'->oos@1.00 despite eclairage class; bank77 'lost my card'->oos@0.93 despite card classes). Conformal can't catch singleton errors \u2014 flagged for head rework (same family as eq prompt-mismatch). tools/release_gate.py tracks.",
+        "golden_note": "RESOLVED 2026-10-13: confident-oos singleton on 'lampadaire en panne' was a corpus-narrowness defect, NOT a prompt mismatch (v2 features were already DECIDE_SYS). Fixed by training civic_fr_v3w_mt.head with 110 hand-written natural phrasings across all 11 classes; deployed to prod 8402, golden probe now eclairage@1.00. Bank77's 'lost my card'->oos is CORRECT scope rejection (bank50 subset lacks lost_or_stolen_card).",
         "limitations": [
           "synthetic corpus: in-scope numbers reflect template separability, not production skill",
-          "confident oos singletons on natural phrasing ('lampadaire en panne'->oos@1.00) \u2014 corpus narrowness shows as confident oos, not abstention",
+          "natural_eval measures only 22 phrasings; wider natural coverage unmeasured",
           "best-calibrated lane under mondrian (89% per-class auto, 97.7% marginal)"
         ]
       },
@@ -317,13 +318,13 @@
       "operating": {
         "min_conf": null,
         "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
-        "qhat": 0.95,
-        "qhat_note": "selective-risk on 176-row cal split (civic_fr_holdout+oos_eval): qhat 0.95 \u2192 97.7% auto, ub95 bound 1.73%, eval err 0.58%. Head is sharply calibrated \u2014 near-binary confidence \u2014 so conformal adds a real bound at almost no automation cost. Caveat: only 22 OOS rows in cal; bound covers routing errors, not OOS recall.",
+        "qhat": 0.746,
+        "qhat_note": "v3w head (v2 corpus + 110 natural-phrasing rows x4 weight): conformal on 352-row cal split, alpha=0.02 -> qhat 0.746. Holdout: 96.7% auto, err_auto 0.31%, coverage 99.7%. Natural eval (22 phrasings): auto 86.4%, err 5.26%, coverage 95.5%. vs v2 head: natural_eval 7/22 -> 22/22 (route-or-candidate).",
         "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane",
-        "golden_note": "golden-gate finding 2026-10-12: head emits confident oos SINGLETONS on in-domain phrasing (civic_fr 'lampadaire en panne'->oos@1.00 despite eclairage class; bank77 'lost my card'->oos@0.93 despite card classes). Conformal can't catch singleton errors \u2014 flagged for head rework (same family as eq prompt-mismatch). tools/release_gate.py tracks.",
+        "golden_note": "RESOLVED 2026-10-13: confident-oos singleton on 'lampadaire en panne' was a corpus-narrowness defect, NOT a prompt mismatch (v2 features were already DECIDE_SYS). Fixed by training civic_fr_v3w_mt.head with 110 hand-written natural phrasings across all 11 classes; deployed to prod 8402, golden probe now eclairage@1.00. Bank77's 'lost my card'->oos is CORRECT scope rejection (bank50 subset lacks lost_or_stolen_card).",
         "limitations": [
           "synthetic corpus: in-scope numbers reflect template separability, not production skill",
-          "confident oos singletons on natural phrasing ('lampadaire en panne'->oos@1.00) \u2014 corpus narrowness shows as confident oos, not abstention",
+          "natural_eval measures only 22 phrasings; wider natural coverage unmeasured",
           "best-calibrated lane under mondrian (89% per-class auto, 97.7% marginal)"
         ]
       },
@@ -338,6 +339,77 @@
       "provenance": "civic_fr 0.1.0 + explicit oos class (FR hard+easy negatives); live-verified",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791697925
+    },
+    {
+      "name": "civic_fr",
+      "version": "0.2.0",
+      "file": "civic_fr-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic_fr-0.2.0.lanepack.tar.gz",
+      "sha256": "edf31ea7c0b73e0f0dbefbd21f7d95cae842f6c9a74b850e3729d31bae18f721",
+      "head_sha256": "6527ef96666ca3f3edd2a27f5b16cd532ff57f97829b4cb34255698c73d18afb",
+      "classes": 12,
+      "taxonomy": [
+        "activites_commerciales",
+        "oos",
+        "arbres_vegetation",
+        "autre",
+        "eau",
+        "eclairage",
+        "graffiti_affiches",
+        "mobilier_urbain",
+        "objets_encombrants",
+        "proprete_dechets",
+        "stationnement_epaves",
+        "voirie_trottoir"
+      ],
+      "status": "demo",
+      "holdout_acc": 0.988,
+      "n_holdout": 330,
+      "oos": {
+        "oos_recall": 0.682,
+        "id_oos_recall": 0.417,
+        "far_oos_recall": 1.0,
+        "in_scope_false_oos": 0.0
+      },
+      "live_verified": true,
+      "operating": {
+        "min_conf": null,
+        "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
+        "qhat": 0.746,
+        "qhat_note": "v3w head (v2 corpus + 110 natural-phrasing rows x4 weight): conformal on 352-row cal split, alpha=0.02 -> qhat 0.746. Holdout: 96.7% auto, err_auto 0.31%, coverage 99.7%. Natural eval (22 phrasings): auto 86.4%, err 5.26%, coverage 95.5%. vs v2 head: natural_eval 7/22 -> 22/22 (route-or-candidate).",
+        "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane",
+        "golden_note": "RESOLVED 2026-10-13: confident-oos singleton on 'lampadaire en panne' was a corpus-narrowness defect, NOT a prompt mismatch (v2 features were already DECIDE_SYS). Fixed by training civic_fr_v3w_mt.head with 110 hand-written natural phrasings across all 11 classes; deployed to prod 8402, golden probe now eclairage@1.00. Bank77's 'lost my card'->oos is CORRECT scope rejection (bank50 subset lacks lost_or_stolen_card).",
+        "limitations": [
+          "synthetic corpus: in-scope numbers reflect template separability, not production skill",
+          "natural_eval measures only 22 phrasings; wider natural coverage unmeasured",
+          "best-calibrated lane under mondrian (89% per-class auto, 97.7% marginal)"
+        ]
+      },
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": {
+        "alpha": 0.02,
+        "qhat": 0.746,
+        "cal_n": 352,
+        "holdout": {
+          "auto_pct": 96.7,
+          "err_auto_pct": 0.31,
+          "coverage_pct": 99.7
+        },
+        "natural": {
+          "auto_pct": 86.4,
+          "err_auto_pct": 5.26,
+          "coverage_pct": 95.5
+        }
+      },
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "Synthetic civic corpus + hand-written natural phrasings (Apache-2.0 compatible)",
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791879815
     },
     {
       "name": "clinc150",
