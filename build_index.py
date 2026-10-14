@@ -25,8 +25,9 @@ for fn in sorted(os.listdir(LANES)):
         continue
     path = os.path.join(LANES, fn)
     with tarfile.open(path) as t:
-        man = json.loads(t.extractfile("manifest.json").read())
-        ev = json.loads(t.extractfile("eval.json").read())
+        members = {os.path.basename(m.name): m for m in t.getmembers() if m.isfile()}
+        man = json.loads(t.extractfile(members["manifest.json"]).read())
+        ev = json.loads(t.extractfile(members["eval.json"]).read())
     sha = hashlib.sha256(open(path, "rb").read()).hexdigest()
     name_ver = fn[: -len(".lanepack.tar.gz")]
     # eval.json key names vary across emitters — normalize to index fields

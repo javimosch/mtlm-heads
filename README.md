@@ -16,6 +16,7 @@ before you trust the lane.
 | **civic** | 0.2.1 | 13 routes + explicit `oos` class — OOS recall 96.8%, live-verified | 86.6% | free, demo (`lanes/civic-0.2.1.lanepack.tar.gz`) |
 | **clinc150** | 0.1.4 | 150 generic intents + `oos` — hard-negative retrain | 73.8% · OOS AUROC 0.842 | free, certified (`lanes/clinc150-0.1.4.lanepack.tar.gz`) |
 | **banking77** | 0.1.0 | 50 banking intents + `oos` | 73.3% in-scope · **84.4%** ID-OOS recall · 70.2% OOD-OOS · leak 1.6%/cov 58% @ conf 0.7 | free, certified (`lanes/banking77-0.1.0.lanepack.tar.gz`) |
+| **banking77** | 0.1.1 | 50 banking intents + `oos` — ships eval_sample.jsonl for lane_repro | 73.3% in-scope · **84.4%** ID-OOS recall · repro: `lane_repro <pack>` replays embedded 200-row sample | free, certified (`lanes/banking77-0.1.1.lanepack.tar.gz`) |
 | **civic_fr** | 0.1.1 | 11 FR routes + `oos` — OOS recall 90.9%, live-verified | template corpus; natural phrasings abstain (honest) | free, demo (`lanes/civic_fr-0.1.1.lanepack.tar.gz`) |
 | **civic_fr** | 0.2.0 | +110 natural phrasings; fixes confident-oos on natural text (v3w); qhat 0.746 @ alpha=0.02; trade-off: weaker in-dist oos recall | 98.8% | free, demo (`lanes/civic_fr-0.2.0.lanepack.tar.gz`) |
 | **helpdesk** | 0.2.0 | 6 IT routes + `oos` | demo — OOS recall 0.90 on hand-written negatives, live-verified + parity-checked | free, demo (`lanes/helpdesk-0.2.0.lanepack.tar.gz`) |
