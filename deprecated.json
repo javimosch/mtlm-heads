@@ -1,27 +1,31 @@
 {
-  "_note": "additive deprecation records \u2014 packs are immutable; a superseded lane stays installable by exact pin but is flagged yanked in the index so range picks skip it",
-  "helpdesk@0.1.1": {
-    "superseded_by": "helpdesk@0.2.0",
-    "reason": "demo pack superseded \u2014 0.2.0 adds the oos class, live-verified eval, and measured abstention metrics; migrate with: python3 tools/lane_install.py helpdesk@0.2.0 --apply"
-  },
-  "civic@0.1.0": {
-    "superseded_by": "civic@0.2.1",
-    "reason": "superseded by 0.2.1 (oos class + conformal eval); migrate with: python3 tools/lane_install.py civic@0.2.1 --apply"
-  },
-  "civic_fr@0.1.0": {
-    "superseded_by": "civic_fr@0.1.1",
-    "reason": "superseded by 0.1.1; migrate with: python3 tools/lane_install.py civic_fr@0.1.1 --apply"
-  },
-  "clinc150@0.1.2": {
-    "superseded_by": "clinc150@0.1.4",
-    "reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5\u219220.4%, hard-negative recall 0\u219259.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply"
-  },
-  "clinc150@0.1.3": {
-    "superseded_by": "clinc150@0.1.4",
-    "reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5\u219220.4%, hard-negative recall 0\u219259.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply"
-  },
-  "eq_tone@0.1.1": {
-    "superseded_by": "eq_tone@0.2.0",
-    "reason": "superseded \u2014 v0.2.0 adds an explicit oos class (87.9% non-tone recall); migrate with: lane_install eq_tone@0.2.0 --apply"
-  }
+ "_note": "additive deprecation records — packs are immutable; a superseded lane stays installable by exact pin but is flagged yanked in the index so range picks skip it",
+ "helpdesk@0.1.1": {
+  "superseded_by": "helpdesk@0.2.0",
+  "reason": "demo pack superseded — 0.2.0 adds the oos class, live-verified eval, and measured abstention metrics; migrate with: python3 tools/lane_install.py helpdesk@0.2.0 --apply"
+ },
+ "civic@0.1.0": {
+  "superseded_by": "civic@0.2.1",
+  "reason": "superseded by 0.2.1 (oos class + conformal eval); migrate with: python3 tools/lane_install.py civic@0.2.1 --apply"
+ },
+ "civic_fr@0.1.0": {
+  "superseded_by": "civic_fr@0.1.1",
+  "reason": "superseded by 0.1.1; migrate with: python3 tools/lane_install.py civic_fr@0.1.1 --apply"
+ },
+ "clinc150@0.1.2": {
+  "superseded_by": "clinc150@0.1.4",
+  "reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5→20.4%, hard-negative recall 0→59.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply"
+ },
+ "clinc150@0.1.3": {
+  "superseded_by": "clinc150@0.1.4",
+  "reason": "superseded by 0.1.4 (hard-negative retrain: OOS abstain 15.5→20.4%, hard-negative recall 0→59.4%); migrate with: python3 tools/lane_install.py clinc150@0.1.4 --apply"
+ },
+ "eq_tone@0.1.1": {
+  "superseded_by": "eq_tone@0.2.0",
+  "reason": "superseded — v0.2.0 adds an explicit oos class (87.9% non-tone recall); migrate with: lane_install eq_tone@0.2.0 --apply"
+ },
+ "civic_fr@0.2.0": {
+  "superseded_by": "civic_fr@0.2.1",
+  "reason": "0.2.1 embeds eval_sample.jsonl (194 rows) making every published metric re-runnable via lane_repro.py; same v3w head, same evals"
+ }
 }

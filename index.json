@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1791954840,
+  "generated_at": 1791995518,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -90,6 +90,7 @@
         "tier": "free"
       },
       "provenance": "BANKING77-OOS (jianguoz/Few-Shot-Intent-Detection, PolyAI-LDN/task-specific-datasets): 5905 train / 2062 id-oos train; m7router3s384 frozen trunk; emit tools/emit_banking77.py",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791756725
     },
@@ -180,6 +181,7 @@
         "tier": "free"
       },
       "provenance": "BANKING77-OOS (jianguoz/Few-Shot-Intent-Detection, PolyAI-LDN/task-specific-datasets): 5905 train / 2062 id-oos train; m7router3s384 frozen trunk; emit tools/emit_banking77.py",
+      "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791756725
     },
@@ -256,6 +258,7 @@
         "tier": "free"
       },
       "provenance": "FixMyStreet Open311 API (public citizen reports, fetched 2026-10-11); 320 council labels -> 13 canonical routes; train 3751/holdout 941; tools/emit_civic.py",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791690380
     },
@@ -313,6 +316,7 @@
         "tier": "free"
       },
       "provenance": "civic 0.1.0 + explicit oos class: 48 council-adjacent negatives + 200 CLINC train texts; live-verified on anvil 8437; supersedes yanked 0.2.0 (label-misaligned fit)",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791695826
     },
@@ -370,6 +374,7 @@
         "tier": "free"
       },
       "provenance": "DansMaRue taxonomy (opendata.paris.fr) + tools/build_civic_fr.py template generation; no real free text exists publicly",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791691307
     },
@@ -427,6 +432,7 @@
         "tier": "free"
       },
       "provenance": "civic_fr 0.1.0 + explicit oos class (FR hard+easy negatives); live-verified",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791697925
     },
@@ -436,6 +442,78 @@
       "file": "civic_fr-0.2.0.lanepack.tar.gz",
       "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic_fr-0.2.0.lanepack.tar.gz",
       "sha256": "edf31ea7c0b73e0f0dbefbd21f7d95cae842f6c9a74b850e3729d31bae18f721",
+      "head_sha256": "6527ef96666ca3f3edd2a27f5b16cd532ff57f97829b4cb34255698c73d18afb",
+      "classes": 12,
+      "taxonomy": [
+        "activites_commerciales",
+        "oos",
+        "arbres_vegetation",
+        "autre",
+        "eau",
+        "eclairage",
+        "graffiti_affiches",
+        "mobilier_urbain",
+        "objets_encombrants",
+        "proprete_dechets",
+        "stationnement_epaves",
+        "voirie_trottoir"
+      ],
+      "status": "demo",
+      "holdout_acc": 0.988,
+      "n_holdout": 330,
+      "oos": {
+        "oos_recall": 0.682,
+        "id_oos_recall": 0.417,
+        "far_oos_recall": 1.0,
+        "in_scope_false_oos": 0.0
+      },
+      "live_verified": true,
+      "operating": {
+        "min_conf": null,
+        "note": "confidence ~1.0 everywhere; gating cannot discriminate, argmax abstain carries it",
+        "qhat": 0.746,
+        "qhat_note": "v3w head (v2 corpus + 110 natural-phrasing rows x4 weight): conformal on 352-row cal split, alpha=0.02 -> qhat 0.746. Holdout: 96.7% auto, err_auto 0.31%, coverage 99.7%. Natural eval (22 phrasings): auto 86.4%, err 5.26%, coverage 95.5%. vs v2 head: natural_eval 7/22 -> 22/22 (route-or-candidate).",
+        "mondrian": "per-class qhat: auto 89.2% at \u03b1=0.05, worst-class 78.6% (12 classes) \u2014 narrow taxonomy sustains real class-conditional automation, the standout lane",
+        "golden_note": "RESOLVED 2026-10-13: confident-oos singleton on 'lampadaire en panne' was a corpus-narrowness defect, NOT a prompt mismatch (v2 features were already DECIDE_SYS). Fixed by training civic_fr_v3w_mt.head with 110 hand-written natural phrasings across all 11 classes; deployed to prod 8402, golden probe now eclairage@1.00. Bank77's 'lost my card'->oos is CORRECT scope rejection (bank50 subset lacks lost_or_stolen_card).",
+        "limitations": [
+          "synthetic corpus: in-scope numbers reflect template separability, not production skill",
+          "natural_eval measures only 22 phrasings; wider natural coverage unmeasured",
+          "best-calibrated lane under mondrian (89% per-class auto, 97.7% marginal)"
+        ]
+      },
+      "yanked": true,
+      "superseded_by": "civic_fr@0.2.1",
+      "yank_reason": "0.2.1 embeds eval_sample.jsonl (194 rows) making every published metric re-runnable via lane_repro.py; same v3w head, same evals",
+      "conformal": {
+        "alpha": 0.02,
+        "qhat": 0.746,
+        "cal_n": 352,
+        "holdout": {
+          "auto_pct": 96.7,
+          "err_auto_pct": 0.31,
+          "coverage_pct": 99.7
+        },
+        "natural": {
+          "auto_pct": 86.4,
+          "err_auto_pct": 5.26,
+          "coverage_pct": 95.5
+        }
+      },
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "Synthetic civic corpus + hand-written natural phrasings (Apache-2.0 compatible)",
+      "eval_sample": null,
+      "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
+      "published_at": 1791879815
+    },
+    {
+      "name": "civic_fr",
+      "version": "0.2.1",
+      "file": "civic_fr-0.2.1.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/civic_fr-0.2.1.lanepack.tar.gz",
+      "sha256": "12e6803c49b9a9760ddad68a57752391bdee940ae4b2159d390de6b5627ed5d8",
       "head_sha256": "6527ef96666ca3f3edd2a27f5b16cd532ff57f97829b4cb34255698c73d18afb",
       "classes": 12,
       "taxonomy": [
@@ -498,6 +576,7 @@
         "tier": "free"
       },
       "provenance": "Synthetic civic corpus + hand-written natural phrasings (Apache-2.0 compatible)",
+      "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791879815
     },
@@ -696,6 +775,7 @@
         "tier": "free"
       },
       "provenance": "Trained on the public CLINC150 benchmark (train split only), holdout eval on untouched test split. v0.1.1: labels.txt repaired; v0.1.2: manifest status field added.",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859
     },
@@ -909,6 +989,7 @@
         "tier": "free"
       },
       "provenance": "Trained on the public CLINC150 benchmark (train split only), holdout eval on untouched test split. v0.1.1: labels.txt repaired; v0.1.2: manifest status field added. v0.1.3: eval.json gains measured oos_recall + leak/coverage curves (bench/oos_eval_catalog); head unchanged.",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791739486
     },
@@ -1120,6 +1201,7 @@
         "tier": "free"
       },
       "provenance": "Trained on the public CLINC150 benchmark (train split only) + 200 hand-written intent-adjacent hard negatives; holdout eval on untouched test split. v0.1.4: retrained with hard-negative OOS corpus - argmax abstain 15.5%->20.4%, hard-negative recall 0%->59.4%, in-scope 86.7%->86.0%. Head bytes differ from 0.1.3.",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791745818
     },
@@ -1182,6 +1264,7 @@
         "tier": "free"
       },
       "provenance": "GoEmotions (google-research, Reddit comments, Apache-2.0), 28 labels merged to 5 tone superclasses; trained on frozen m7router3s384 trunk via LR head. v0.1.1: manifest status field added.",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859
     },
@@ -1226,6 +1309,7 @@
         "tier": "free"
       },
       "provenance": "GoEmotions (google-research, Reddit comments, Apache-2.0), 28 labels merged to 5 tone superclasses + explicit oos class (hard negatives: clinc hn, banking77). Trained on frozen m7router3s384 trunk via LR head. v0.2.0: oos class added, live-verified.",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791783913
     },
@@ -1268,6 +1352,7 @@
         "tier": "free"
       },
       "provenance": "Synthetic IT-helpdesk demo corpus (public, generated). v0.1.1: manifest status field added.",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791651859
     },
@@ -1317,6 +1402,7 @@
         "tier": "free"
       },
       "provenance": "Synthetic IT-helpdesk corpus (2000 rows, public) + 80 hand-written OOS negatives (facilities/HR-adjacent + generic). 7 routes incl explicit oos. Live-verified + parity-checked on anvil-serve-mixed.",
+      "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791701170
     }
