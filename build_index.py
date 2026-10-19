@@ -40,7 +40,7 @@ for fn in sorted(os.listdir(LANES)):
         "file": fn,
         "url": f"{BASE_URL}/{fn}",
         "sha256": sha,
-        "head_sha256": man["head_sha256"],
+        "head_sha256": man.get("head_sha256"),
         "classes": len(man["taxonomy"]),
         "taxonomy": man["taxonomy"],
         "status": man.get("status") or ev.get("status") or ("certified" if acc else "demo"),

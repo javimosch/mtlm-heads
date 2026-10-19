@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792443986,
+  "generated_at": 1792448833,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1442,6 +1442,41 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=pii:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1792443979
+    },
+    {
+      "name": "pii_rules",
+      "version": "0.1.0",
+      "file": "pii_rules-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/pii_rules-0.1.0.lanepack.tar.gz",
+      "sha256": "27bf5293eb23db2bf01ccaccdc284ba7e2469344c1df7222ef9ec1212434417f",
+      "head_sha256": null,
+      "classes": 6,
+      "taxonomy": [
+        "none",
+        "pii_email",
+        "pii_phone",
+        "pii_card",
+        "pii_iban",
+        "link_adult"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-written rule spec + HaGeZi-style demo domain list; runtime: anvil-serve with rules-lane support (machin-anvil 63175e3)",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve >= rules-lanes build (ANVIL_EXPERTS=pii_rules:pii_rules.rules.json)",
+      "published_at": 1792448818
     }
   ]
 }
