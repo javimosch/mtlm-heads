@@ -18,11 +18,13 @@ before you trust the lane.
 | **banking77** | 0.1.0 | 50 banking intents + `oos` | 73.3% in-scope · **84.4%** ID-OOS recall · 70.2% OOD-OOS · leak 1.6%/cov 58% @ conf 0.7 | free, certified (`lanes/banking77-0.1.0.lanepack.tar.gz`) |
 | **banking77** | 0.1.1 | 50 banking intents + `oos` — ships eval_sample.jsonl for lane_repro | 73.3% in-scope · **84.4%** ID-OOS recall · repro: `lane_repro <pack>` replays embedded 200-row sample | free, certified (`lanes/banking77-0.1.1.lanepack.tar.gz`) |
 | **civic_fr** | 0.1.1 | 11 FR routes + `oos` — OOS recall 90.9%, live-verified | template corpus; natural phrasings abstain (honest) | free, demo (`lanes/civic_fr-0.1.1.lanepack.tar.gz`) |
-| **civic_fr** | 0.2.0 | +110 natural phrasings; fixes confident-oos on natural text (v3w); qhat 0.746 @ alpha=0.02; trade-off: weaker in-dist oos recall | 98.8% | free, demo (`lanes/civic_fr-0.2.0.lanepack.tar.gz`) |
+| **civic_fr** | 0.2.1 | 12 labels | 98.8% | free, demo (`lanes/civic_fr-0.2.1.lanepack.tar.gz`) |
 | **helpdesk** | 0.2.0 | 6 IT routes + `oos` | demo — OOS recall 0.90 on hand-written negatives, live-verified + parity-checked | free, demo (`lanes/helpdesk-0.2.0.lanepack.tar.gz`) |
 | **eq_tone** | 0.2.0 | 5 tone classes + `oos` — hard-negative retrain | ~50% in-scope (weak but honest, see note) · **87.9%** OOS recall on non-tone text · triage-only: floor conf≥0.9 (~5.6% auto) | free, demo (`lanes/eq_tone-0.2.0.lanepack.tar.gz`) |
+| **pii** | 0.1.0 | PII + off-platform handoff flags (email/phone/IBAN/card/SSN/handoff) — obfuscation-resistant | 85.8% in-scope · 95.7% OOS · 90% natural | free, certified (`lanes/pii-0.1.0.lanepack.tar.gz`) |
 | civic (old) | 0.1.0 | 13 civic defect routes (FixMyStreet) | **96.8%** on 941-row holdout · conformal α=.05 → 93.7% auto @ 0.79% err | free, certified (`lanes/civic-0.1.0.lanepack.tar.gz`) |
 | civic_fr (old) | 0.1.0 | 11 FR routes + `oos` — template corpus (superseded by 0.1.1 retrain) | 100.0% | free, demo (`lanes/civic_fr-0.1.0.lanepack.tar.gz`) |
+| civic_fr (old) | 0.2.0 | +110 natural phrasings; fixes confident-oos on natural text (v3w); qhat 0.746 @ alpha=0.02; trade-off: weaker in-dist oos recall | 98.8% | free, demo (`lanes/civic_fr-0.2.0.lanepack.tar.gz`) |
 | clinc150 (old) | 0.1.2 | 150 generic intents + `oos` (superseded — labels.txt dropped 3 classes) | 73.8% | free, certified (`lanes/clinc150-0.1.2.lanepack.tar.gz`) |
 | clinc150 (old) | 0.1.3 | 150 generic intents + `oos` (superseded by 0.1.4 hard-negative retrain) | 73.8% | free, certified (`lanes/clinc150-0.1.3.lanepack.tar.gz`) |
 | eq_tone (old) | 0.1.1 | 5 tone classes, no `oos` (superseded by 0.2.0 hard-negative retrain) | 51.4% | free, demo (`lanes/eq_tone-0.1.1.lanepack.tar.gz`) |

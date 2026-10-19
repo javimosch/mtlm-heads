@@ -56,6 +56,7 @@ for fn in sorted(os.listdir(LANES)):
         "license": man["license"],
         "pricing": man.get("pricing", {"tier": "free"}),
         "provenance": man["provenance"],
+        "eval_sample": man.get("eval_sample"),
         "runtime": man["runtime"],
         "published_at": man["created"],
     })
