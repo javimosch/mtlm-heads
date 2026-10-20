@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792448833,
+  "generated_at": 1792514065,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1405,6 +1405,40 @@
       "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791701170
+    },
+    {
+      "name": "link_safety",
+      "version": "0.1.0",
+      "file": "link_safety-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/link_safety-0.1.0.lanepack.tar.gz",
+      "sha256": "debf0eadd2b2a57c3210fa8db9ea43b2eb6c78daf808c503269067e1d073e1bf",
+      "head_sha256": null,
+      "classes": 5,
+      "taxonomy": [
+        "safe",
+        "link_unsafe",
+        "link_adult",
+        "link_gambling",
+        "link_phishing"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-written patterns + curated demo blocklist; runtime: anvil-serve rules lanes (machin-anvil 249de6a+)",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve >= rules-lanes build",
+      "published_at": 1792514065
     },
     {
       "name": "pii",
