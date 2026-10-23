@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792741597,
+  "generated_at": 1792741998,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1503,6 +1503,48 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve >= score-policy build (POST /v1/route {state,expert,scores})",
       "published_at": 1792696581
+    },
+    {
+      "name": "mod_text",
+      "version": "0.1.0",
+      "file": "mod_text-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/mod_text-0.1.0.lanepack.tar.gz",
+      "sha256": "b7f3a8676be7931a11a615d250a49e9451ff5800bc94d5aea5641bb10c7f7c75",
+      "head_sha256": null,
+      "classes": 13,
+      "taxonomy": [
+        "clean",
+        "pii_email",
+        "pii_phone",
+        "pii_iban",
+        "pii_card",
+        "pii_crypto",
+        "profane",
+        "scam",
+        "suspicious",
+        "link_unsafe",
+        "link_adult",
+        "link_gambling",
+        "link_phishing"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "composite of pii_rules+scam_detect+profanity+link_safety packs \u2014 pattern coverage, not semantic moderation",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792741998
     },
     {
       "name": "pii",
