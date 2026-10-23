@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792741998,
+  "generated_at": 1792742071,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1343,6 +1343,37 @@
       "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791783913
+    },
+    {
+      "name": "extremism",
+      "version": "0.1.0",
+      "file": "extremism-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/extremism-0.1.0.lanepack.tar.gz",
+      "sha256": "eb1e976d8617d23c3a92d9be876f4581eda887b7f1b885d564231308743fda17",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "extremist"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored call-to-violence patterns + curated term list; covers explicit phrasing not coded/dogwhistle language",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792742071
     },
     {
       "name": "helpdesk",
