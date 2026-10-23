@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792696581,
+  "generated_at": 1792741329,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1544,6 +1544,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve >= rules-lanes build (ANVIL_EXPERTS=pii_rules:pii_rules.rules.json)",
       "published_at": 1792448818
+    },
+    {
+      "name": "profanity",
+      "version": "0.1.0",
+      "file": "profanity-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/profanity-0.1.0.lanepack.tar.gz",
+      "sha256": "3d68dd51810cc19a6c6e87c627ea4632c0d02e7e93cecf4eecf6816f29aa795d",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "profane"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "LDNOOBW public profanity list (en), single-token word matching \u2014 multiword list entries don't fire; anvil 'words' kind, machin-anvil ad68792+",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve >= words-kind build",
+      "published_at": 1792741329
     }
   ]
 }
