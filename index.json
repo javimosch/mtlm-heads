@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792741473,
+  "generated_at": 1792741597,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1204,6 +1204,37 @@
       "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791745818
+    },
+    {
+      "name": "disposable_email",
+      "version": "0.1.0",
+      "file": "disposable_email-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/disposable_email-0.1.0.lanepack.tar.gz",
+      "sha256": "4365543f3a8f698f41af66aa3bb409c3bc057d979b4a295f00b91ad00784957d",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "legit",
+        "disposable"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "disposable-email-domains public blocklist (martenson/disposable-email-domains), deterministic domains rule",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792741597
     },
     {
       "name": "eq_tone",
