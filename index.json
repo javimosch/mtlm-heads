@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792742209,
+  "generated_at": 1792742483,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1742,6 +1742,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792742209
+    },
+    {
+      "name": "spam",
+      "version": "0.1.0",
+      "file": "spam-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/spam-0.1.0.lanepack.tar.gz",
+      "sha256": "9f3e150eb21a1ad65c30462d92c097f3aa0634cc890cec5052852c67a9acb8a4",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "spam"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored spam patterns (pharma/casino/SEO/promo formulas) + classic spam phrase list",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792742483
     }
   ]
 }
