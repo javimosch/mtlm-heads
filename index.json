@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792742554,
+  "generated_at": 1792742797,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1374,6 +1374,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792742071
+    },
+    {
+      "name": "harassment",
+      "version": "0.1.0",
+      "file": "harassment-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/harassment-0.1.0.lanepack.tar.gz",
+      "sha256": "21d02c85773566d9a1ce04503f0f07ab35853a80dfcb52539699c99e515a8a79",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "harassment"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored directed-abuse patterns (you-anchored insult + threat formulas); distinct from profanity (vocabulary) \u2014 harassment is target-directed",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792742797
     },
     {
       "name": "helpdesk",
