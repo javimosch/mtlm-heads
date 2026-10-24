@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792826424,
+  "generated_at": 1792826468,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -2029,6 +2029,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve >= rules-lanes build (ANVIL_EXPERTS=pii_rules:pii_rules.rules.json)",
       "published_at": 1792448818
+    },
+    {
+      "name": "piracy",
+      "version": "0.1.0",
+      "file": "piracy-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/piracy-0.1.0.lanepack.tar.gz",
+      "sha256": "afb9cbd50c487fa07ab6e54ac3ab05c69386754a0fe7ccf1c5df62c34961bfec",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "piracy"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored piracy patterns \u2014 catches the vocabulary, not jurisdiction",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792826468
     },
     {
       "name": "profanity",
