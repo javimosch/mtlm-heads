@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792875443,
+  "generated_at": 1792875557,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -2426,6 +2426,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792742209
+    },
+    {
+      "name": "sextortion",
+      "version": "0.1.0",
+      "file": "sextortion-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/sextortion-0.1.0.lanepack.tar.gz",
+      "sha256": "a7386b02d523f386dc6be56aa4f59ee5ef42522b933e9f3f69f5f4e5a3789c0b",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "sextortion"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored sextortion patterns \u2014 have-pics/pay-or-share/everyone-sees shapes",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792875557
     },
     {
       "name": "spam",
