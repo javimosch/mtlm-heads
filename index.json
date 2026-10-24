@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792826468,
+  "generated_at": 1792826782,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1204,6 +1204,37 @@
       "eval_sample": null,
       "runtime": "anvil-serve >= v0.3.0 (ANVIL_EXPERTS=<lane>:<head>, ANVIL_EXPERT_QHAT if provided)",
       "published_at": 1791745818
+    },
+    {
+      "name": "crypto_scam",
+      "version": "0.1.0",
+      "file": "crypto_scam-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/crypto_scam-0.1.0.lanepack.tar.gz",
+      "sha256": "f724cc20bac407dd6f8d3a0a0f83585c84146ec7a2cf0e9fc07157cef92c0dbb",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "crypto_scam"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored crypto-scam patterns \u2014 catches the harvesting/fraud vocabulary, not crypto discussion",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792826782
     },
     {
       "name": "disposable_email",
