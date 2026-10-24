@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792826856,
+  "generated_at": 1792826976,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -2247,6 +2247,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792742483
+    },
+    {
+      "name": "url_shortener",
+      "version": "0.1.0",
+      "file": "url_shortener-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/url_shortener-0.1.0.lanepack.tar.gz",
+      "sha256": "83d0575b8e7b5f1dd380320cea81d94926dcfce747c488be74059d01d82a4846",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "shortener"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "CC-BY-SA-4.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "PeterDaveHello url-shorteners list (CC-BY-SA-4.0), fetched at install",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792826976
     },
     {
       "name": "violence",
