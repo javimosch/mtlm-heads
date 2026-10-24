@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792875947,
+  "generated_at": 1792876086,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1842,6 +1842,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792826856
+    },
+    {
+      "name": "medical_misinfo",
+      "version": "0.1.0",
+      "file": "medical_misinfo-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/medical_misinfo-0.1.0.lanepack.tar.gz",
+      "sha256": "c8d7fbdd91e9575604f42e39e2785a061712494b72964aebf63aeb66abe0f33a",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "misinfo"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored health-misinfo patterns \u2014 drink-cure/vaccine-autism/covid-hoax/5g shapes",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792876086
     },
     {
       "name": "mod_policy",
