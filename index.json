@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792876518,
+  "generated_at": 1792959530,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1777,6 +1777,38 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792875784
+    },
+    {
+      "name": "injection",
+      "version": "0.1.0",
+      "file": "injection-0.1.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/injection-0.1.0.lanepack.tar.gz",
+      "sha256": "eeafa8eb9bbd41cdeaae98cb7363979ca71897e1611f20a92f97a096eebfdce3",
+      "head_sha256": null,
+      "classes": 3,
+      "taxonomy": [
+        "clean",
+        "injection",
+        "extraction"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored prompt-injection/jailbreak patterns \u2014 LLM-gateway lane",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792959530
     },
     {
       "name": "job_scam",
