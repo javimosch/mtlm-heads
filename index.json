@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792962442,
+  "generated_at": 1792962535,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -3017,6 +3017,37 @@
       "published_at": 1792742209
     },
     {
+      "name": "self_harm",
+      "version": "0.2.0",
+      "file": "self_harm-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/self_harm-0.2.0.lanepack.tar.gz",
+      "sha256": "79ca04c7f78e3586c51cef91b6134144aefd85ce6989b415f4bafa521bef7ca5",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "self_harm"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792962533
+    },
+    {
       "name": "sextortion",
       "version": "0.1.0",
       "file": "sextortion-0.1.0.lanepack.tar.gz",
@@ -3139,6 +3170,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792825880
+    },
+    {
+      "name": "violence",
+      "version": "0.2.0",
+      "file": "violence-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/violence-0.2.0.lanepack.tar.gz",
+      "sha256": "804f255885b3159cbb89c558435038cd121209df6a6be1f8154503e4cb08013a",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "violence"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792962534
     },
     {
       "name": "weapons",
