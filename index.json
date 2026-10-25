@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792960775,
+  "generated_at": 1792962310,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1622,6 +1622,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792742797
+    },
+    {
+      "name": "harassment",
+      "version": "0.2.0",
+      "file": "harassment-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/harassment-0.2.0.lanepack.tar.gz",
+      "sha256": "b4a635909e51a3cfa5b938fa760eb90e1e1858e5ff42e6bc0264b0b3fb7a2bb9",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "harassment"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored insult patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792962310
     },
     {
       "name": "hate",
