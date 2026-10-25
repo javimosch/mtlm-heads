@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1792962535,
+  "generated_at": 1792962558,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -2921,6 +2921,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve >= words-kind build",
       "published_at": 1792741329
+    },
+    {
+      "name": "profanity",
+      "version": "0.2.0",
+      "file": "profanity-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/profanity-0.2.0.lanepack.tar.gz",
+      "sha256": "f276454c9cd58b54fe066728384108f1846e68ea0e639f9199511f73faac9baf",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "profane"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored profanity patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1792962558
     },
     {
       "name": "romance_scam",
