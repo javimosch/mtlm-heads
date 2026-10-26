@@ -1,6 +1,6 @@
 {
   "index_schema_version": "mtlm-index/1",
-  "generated_at": 1793023032,
+  "generated_at": 1793023202,
   "artifacts_base": "https://github.com/javimosch/mtlm-heads/raw/master/lanes",
   "lanes": [
     {
@@ -1299,6 +1299,37 @@
       "published_at": 1792826782
     },
     {
+      "name": "crypto_scam",
+      "version": "0.2.0",
+      "file": "crypto_scam-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/crypto_scam-0.2.0.lanepack.tar.gz",
+      "sha256": "dc2a645e5e04dff9eee644d3e369b4f3950c96c30f63c198f3b0e805c3b0d10f",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "crypto_scam"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1793023196
+    },
+    {
       "name": "disposable_email",
       "version": "0.1.0",
       "file": "disposable_email-0.1.0.lanepack.tar.gz",
@@ -1721,7 +1752,7 @@
       "version": "0.2.0",
       "file": "gambling-0.2.0.lanepack.tar.gz",
       "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/gambling-0.2.0.lanepack.tar.gz",
-      "sha256": "feda0c4b524bd47fea4938546df6fc45e1845e3df6508194b5aa71d7b7ccdce3",
+      "sha256": "59c248e5e03b03258faae9ccb923869c2e8f5095797e6f662a8dc953cb3c61df",
       "head_sha256": null,
       "classes": 2,
       "taxonomy": [
@@ -1745,7 +1776,7 @@
       "provenance": "hand-authored patterns + multilingual coverage",
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
-      "published_at": 1792962780
+      "published_at": 1793023192
     },
     {
       "name": "grooming",
@@ -3406,6 +3437,37 @@
       "published_at": 1792825617
     },
     {
+      "name": "nsfw",
+      "version": "0.2.0",
+      "file": "nsfw-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/nsfw-0.2.0.lanepack.tar.gz",
+      "sha256": "c80914885768d97214c6590c5ff757d2128b83e904f6d215eacfcca32ee7f2ef",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "nsfw"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1793023179
+    },
+    {
       "name": "phish",
       "version": "0.1.0",
       "file": "phish-0.1.0.lanepack.tar.gz",
@@ -3569,6 +3631,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792826468
+    },
+    {
+      "name": "piracy",
+      "version": "0.2.0",
+      "file": "piracy-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/piracy-0.2.0.lanepack.tar.gz",
+      "sha256": "2c6b9ddf09d7ccf97b4e0189641379b7902a578b49ea1d3645d139426f0d0be8",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "piracy"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1793023202
     },
     {
       "name": "profanity",
@@ -3911,6 +4004,37 @@
       "eval_sample": "eval_sample.jsonl",
       "runtime": "anvil-serve rules lanes",
       "published_at": 1792742483
+    },
+    {
+      "name": "spam",
+      "version": "0.2.0",
+      "file": "spam-0.2.0.lanepack.tar.gz",
+      "url": "https://github.com/javimosch/mtlm-heads/raw/master/lanes/spam-0.2.0.lanepack.tar.gz",
+      "sha256": "38284cdb53c32332b6fc16318e9d8e6017ec6525bfd5c111d9465864e7a48c75",
+      "head_sha256": null,
+      "classes": 2,
+      "taxonomy": [
+        "clean",
+        "spam"
+      ],
+      "status": "certified",
+      "holdout_acc": null,
+      "n_holdout": null,
+      "oos": null,
+      "live_verified": false,
+      "operating": null,
+      "yanked": null,
+      "superseded_by": null,
+      "yank_reason": null,
+      "conformal": null,
+      "license": "Apache-2.0",
+      "pricing": {
+        "tier": "free"
+      },
+      "provenance": "hand-authored patterns + multilingual coverage",
+      "eval_sample": "eval_sample.jsonl",
+      "runtime": "anvil-serve rules lanes",
+      "published_at": 1793023187
     },
     {
       "name": "url_shortener",
